@@ -1,0 +1,120 @@
+/**************************************************************************************************
+ *
+ *  @Section: Global Styles
+ *
+***************************************************************************************************/
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.4rem;
+	line-height: 1.3;
+	background: @off-white;
+	color: @dark-gray;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: @dark-gray;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus,
+	&:active {
+		text-decoration: none;
+		color: auto;
+	}
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+hr {
+	width: 33px;
+	margin: 10px 0 15px;
+	border: 0;
+	border-bottom: 2px solid @black;
+
+	&.purple-hr {
+		border-color: @purple;
+	}
+}
+
+.main-content-wrapper {
+	background-image: url(img/bg-main.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: 100% auto;
+	padding-top: 30px;
+
+	&:after { .clear; }
+}
+
+.content {
+	background: @off-white;
+}
+
+section {
+	width: 100%;
+	position: relative;
+}
+
+.container {
+	width: @default-width;
+	min-width: @default-min-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+/**************************************************************************************************
+ *
+ *  @Section: Icons
+ *
+***************************************************************************************************/
+i {
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: inline-block;
+	margin-left: 8px;
+
+	&.icon-dbl-arrow-pink {
+		background-image: url(img/arrow-dbl-pink.png);
+		width: 9px;
+		height: 9px;
+		font-size: 2.0rem;
+	}
+
+	&.icon-dbl-arrow-white {
+		background-image: url(img/arrow-dbl-white.png);
+		width: 9px;
+		height: 9px;
+		font-size: 2.0rem;
+	}
+}
+
+
+/**************************************************************************************************
+ *
+ *  @Section: Mobile Styles
+ *
+***************************************************************************************************/
+@media only screen and (max-width: @breakpoint) {
+
+}
+
+
+
+

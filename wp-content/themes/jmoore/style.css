@@ -1,0 +1,923 @@
+/*
+  Theme Name: Jenny Moore's WP Theme
+  Description: Theme for Author, Jenny Moore's, Wordpress Site
+  Version: 1.0.0
+  License: The MIT License (MIT)
+  License URI: http://opensource.org/licenses/MIT
+  Text Domain: jmoore
+*/
+/**********************************************************************************************************************
+ *  
+ *      @Section: Applies to all page sections
+ *      **Search for @ symbol or @Section: to search by category
+ *
+ *      Color Reference:
+ *      - White: #FFFFFF - @white
+ *      - Black: #000000 - @black
+ *      - Gray: #333333 - @gray
+ *
+ *      Font-Family Reference:
+ *      - Helvetica
+ *      - Arial
+ *      - Sans-Serif
+ *
+ *
+***********************************************************************************************************************/
+/**************************************************************************************************
+ *
+ *  @Section: Variables
+ *
+***************************************************************************************************/
+/**************************************************************************************************
+ *
+ *  @Section: Mixins
+ *
+***************************************************************************************************/
+.clear {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Imports
+ *
+***************************************************************************************************/
+/**************************************************************************************************
+ *
+ *  @Section: Reset Default Browser Styles
+ *
+***************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*:focus {
+  outline: none !important;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Global Styles
+ *
+***************************************************************************************************/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  background: #fff8f6;
+  color: #6c6461;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #6c6461;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus,
+a:active {
+  text-decoration: none;
+  color: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+hr {
+  width: 33px;
+  margin: 10px 0 15px;
+  border: 0;
+  border-bottom: 2px solid #000000;
+}
+hr.purple-hr {
+  border-color: #e2b6d9;
+}
+.main-content-wrapper {
+  background-image: url(img/bg-main.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: 100% auto;
+  padding-top: 30px;
+}
+.main-content-wrapper:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.content {
+  background: #fff8f6;
+}
+section {
+  width: 100%;
+  position: relative;
+}
+.container {
+  width: 75%;
+  min-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Icons
+ *
+***************************************************************************************************/
+i {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  margin-left: 8px;
+}
+i.icon-dbl-arrow-pink {
+  background-image: url(img/arrow-dbl-pink.png);
+  width: 9px;
+  height: 9px;
+  font-size: 2.0rem;
+}
+i.icon-dbl-arrow-white {
+  background-image: url(img/arrow-dbl-white.png);
+  width: 9px;
+  height: 9px;
+  font-size: 2.0rem;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Mobile Styles
+ *
+***************************************************************************************************/
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 70px;
+  *zoom: 1;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+/** THEME
+===================================*/
+.bx-wrapper .bx-viewport {
+  border: 7px solid #fff8f6;
+  background: #ffffff;
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+  -ms-transform: translatez(0);
+  transform: translatez(0);
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  left: 7px;
+  bottom: 52px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url(img/bx_loader.gif) center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666666;
+  border-bottom: 1px solid #e2b6d9;
+  padding-bottom: 2px;
+  width: -webkit-calc(100% - 14px);
+  width: calc(100% - 14px);
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #e8d9fb;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #fd597f;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url(img/controls.png) no-repeat 0 -32px;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url(img/controls.png) no-repeat -43px -32px;
+}
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next:hover {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666\9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Header Specific Styles
+ *
+***************************************************************************************************/
+header {
+  background: #ffffff;
+}
+header:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+header .row-one .container {
+  padding-top: 60px;
+}
+header .row-one .container .logo {
+  line-height: 0.8;
+}
+header .row-one .container .logo a {
+  font-size: 4.3rem;
+  color: #fd597f;
+}
+header .row-two {
+  border-top: 1px solid #e2b6d9;
+  border-bottom: 1px solid #e2b6d9;
+  margin: 0 0 5px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Navigation Specific Styles
+ *
+***************************************************************************************************/
+.nav {
+  text-align: right;
+}
+.nav li {
+  display: inline-block;
+  margin-left: 10px;
+}
+.nav li:first-child {
+  margin-left: 0;
+}
+.nav li.current {
+  border-bottom: 2px solid #fd597f;
+  margin-bottom: -2px;
+}
+.nav li a {
+  font-size: 1.6rem;
+  padding: 4px 0 3px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Footer Styles
+ *
+***************************************************************************************************/
+footer {
+  width: 75%;
+  min-width: 900px;
+  background-color: #fd597f;
+  margin: auto;
+  padding-top: 8px;
+}
+footer .content {
+  width: 100%;
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+}
+footer .content:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+footer .content ul {
+  float: right;
+}
+footer .content ul:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+footer .content ul li {
+  float: left;
+}
+footer .content .footer-nav {
+  margin-right: 60px;
+}
+footer .content .footer-nav li {
+  float: left;
+}
+footer .content .footer-nav li:first-child a {
+  border: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .content .footer-nav li a {
+  color: #f9c0cc;
+  line-height: 14px;
+  margin: 7px 0;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #f9c0cc;
+}
+footer .content .footer-social-links li {
+  margin-left: 6px;
+}
+footer .content .footer-social-links li:first-child {
+  margin-left: 0;
+}
+footer .content .footer-social-links li a {
+  background-image: url(img/footer-social-links.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 28px;
+  height: 28px;
+  text-indent: -9999px;
+}
+footer .content .footer-social-links li a.facebook-link {
+  background-position: 0 0;
+}
+footer .content .footer-social-links li a.twitter-link {
+  background-position: -34px 0;
+}
+footer .content .footer-social-links li a.pinterest-link {
+  background-position: -68px 0;
+}
+footer .content .footer-social-links li a.blogger-link {
+  background-position: -102px 0;
+}
+footer .content .footer-social-links li a.goodreads-link {
+  background-position: -136px 0;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Global Buttons & Global Link's Styles
+ *
+***************************************************************************************************/
+.btn {
+  background-color: #fd597f;
+  color: #ffffff;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 10px 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Homepage Styles
+ *
+***************************************************************************************************/
+section .container {
+  background-color: #fff8f6;
+}
+.hero-carousel .container {
+  background-color: #fff8f6;
+}
+.hero-carousel .container .bxslider li {
+  position: relative;
+}
+.hero-carousel .container .bxslider li .slide-content {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.hero-carousel .container .bxslider li .slide-content h1 {
+  font-size: 3.4rem;
+  font-weight: 100;
+  margin-bottom: 35px;
+}
+.hero-carousel .container .bxslider li .slide-content.right {
+  left: 45%;
+}
+.hero-carousel .container .bxslider li .slide-content.left {
+  right: 45%;
+}
+.featured-stories .container {
+  padding-bottom: 90px;
+}
+.featured-stories .container:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.featured-stories .container .featured-story {
+  float: left;
+  width: 38%;
+  margin-left: 6%;
+  margin-bottom: 35px;
+}
+.featured-stories .container .featured-story:nth-child(even) {
+  margin-left: 0;
+  margin-right: 6%;
+  float: right;
+}
+.featured-stories .container .featured-story:last-child,
+.featured-stories .container .featured-story:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.featured-stories .container .featured-story .img-container {
+  width: 37%;
+  height: auto;
+  padding-bottom: 37%;
+  float: left;
+  border: 1px solid #fd597f;
+  position: relative;
+  overflow: hidden;
+}
+.featured-stories .container .featured-story .img-container:before {
+  content: " ";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 5px solid #ffffff;
+}
+.featured-stories .container .featured-story .img-container img {
+  width: -webkit-calc(100% - 10px);
+  width: calc(100% - 10px);
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.featured-stories .container .featured-story .content-container {
+  width: 60%;
+  float: right;
+}
+.featured-stories .container .featured-story .content-container h2 {
+  font-size: 2.2rem;
+}
+.featured-stories .container .featured-story .content-container p {
+  margin-bottom: 15px;
+}
+.featured-stories .container .featured-story .content-container a {
+  font-size: 1.8rem;
+  color: #fd597f;
+}
+/**************************************************************************************************
+ *
+ *  @Section: About Page Specific Styles
+ *
+***************************************************************************************************/
+.about-section .container {
+  background: #fff8f6;
+  padding: 50px 40px;
+}
+.about-section .container:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.about-section .container .sidebar {
+  float: left;
+  width: 30%;
+}
+.about-section .container .sidebar img.headshot {
+  border: 1px solid #fd597f;
+  padding: 5px;
+}
+.about-section .container .main-content {
+  float: right;
+  width: 65%;
+}
+.about-section .container .main-content h1 {
+  font-size: 4.0rem;
+  color: #fd597f;
+  border-bottom: 1px solid #e2b6d9;
+  margin-bottom: 30px;
+}
+.about-section .container .main-content h2 {
+  font-size: 2.2rem;
+  margin-top: 40px;
+}
+.about-section .container .main-content hr {
+  margin-bottom: 30px;
+}
+.about-section .container .main-content p {
+  margin-bottom: 20px;
+}
+.about-section .container .main-content ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2b6d9;
+}
+.about-section .container .main-content ul li:first-child {
+  border-top: 1px solid #e2b6d9;
+}
+.about-section .container .main-content ul li h5 {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.about-section .container .main-content ul li .answer {
+  display: none;
+  margin-top: 20px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Blog Page Specific Styles
+ *
+***************************************************************************************************/
+.default-text h1,
+.default-text h2,
+.default-text h3,
+.default-text h4,
+.default-text h5 {
+  margin-bottom: 20px;
+}
+.default-text h1 {
+  font-size: 2.4rem;
+}
+.default-text h2 {
+  font-size: 2rem;
+}
+.default-text h3 {
+  font-size: 1.6rem;
+}
+.default-text h4 {
+  font-size: 1.4rem;
+}
+.default-text h5 {
+  font-size: 1rem;
+}
+.default-text p,
+.default-text ul,
+.default-text ol {
+  margin-bottom: 10px;
+}
+.default-text ul,
+.default-text ol {
+  margin-left: 20px;
+}
+.default-text ul {
+  list-style: disc;
+}
+.default-text ol {
+  list-style: decimal;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Mobile Blog Styles
+ *
+***************************************************************************************************/
+/**************************************************************************************************
+ *
+ *  @Section: Books Page Styles
+ *
+***************************************************************************************************/
+.tabs-section .container {
+  background-color: #fff8f6;
+  padding-bottom: 80px;
+}
+.tabs-section .container ul {
+  margin: 0 7px;
+  padding: 7px 0 0;
+  border-bottom: 1px solid #e2b6d9;
+  height: 67px;
+}
+.tabs-section .container ul:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.tabs-section .container ul li {
+  width: 30%;
+  height: 60px;
+  position: relative;
+  float: left;
+  box-shadow: inset 0 0 0 1px #e2b6d9;
+}
+.tabs-section .container ul li:last-child {
+  margin-left: -1px;
+}
+.tabs-section .container ul li a {
+  width: 100%;
+  height: 60px;
+  color: #000000;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+.tabs-section .container ul li a span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.tabs-section .container ul li a.current {
+  color: #fd597f;
+  border-bottom: 3px solid #fd597f;
+}
+.novels-section .container,
+.short-stories-section .container {
+  background-color: #fff8f6;
+  margin: 0 auto;
+}
+.novel-summary,
+.short-story-summary {
+  width: 90%;
+  margin: 0 auto 60px;
+}
+.novel-summary:after,
+.short-story-summary:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.novel-summary .column-one,
+.short-story-summary .column-one,
+.novel-summary .column-two,
+.short-story-summary .column-two,
+.novel-summary .column-three,
+.short-story-summary .column-three {
+  height: 100%;
+}
+.novel-summary .column-one,
+.short-story-summary .column-one {
+  width: 16%;
+  margin-right: 4%;
+  float: left;
+  border: 1px solid #e2b6d9;
+  padding: 9px;
+}
+.novel-summary .column-two,
+.short-story-summary .column-two {
+  width: 58%;
+  float: left;
+  border-right: 1px solid #e2b6d9;
+}
+.novel-summary .column-two h4,
+.short-story-summary .column-two h4 {
+  font-size: 2.4rem;
+}
+.novel-summary .column-two p,
+.short-story-summary .column-two p {
+  margin-bottom: 30px;
+}
+.novel-summary .column-two a.link-continueReading,
+.short-story-summary .column-two a.link-continueReading {
+  color: #fd597f;
+}
+.novel-summary .column-three,
+.short-story-summary .column-three {
+  width: 20%;
+  float: right;
+}
+.novels-section .containter {
+  background-color: #fff8f6;
+}
+.short-stories-section {
+  display: none;
+}

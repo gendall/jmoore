@@ -1,0 +1,77 @@
+/**************************************************************************************************
+ *
+ *  @Section: About Page Specific Styles
+ *
+***************************************************************************************************/
+.about-section {
+
+  .container {
+    background: @off-white;
+    padding: 50px 40px;
+
+    &:after { .clear; }
+
+    .sidebar {
+      float: left;
+      width: 30%;
+
+      img {
+
+        &.headshot {
+          border: 1px solid @pink;
+          padding: 5px;
+        }
+      }
+    }
+
+    .main-content {
+      float: right;
+      width: 65%;
+
+      h1 {
+        font-size: 4.0rem;
+        color: @pink;
+        border-bottom: 1px solid @purple;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-top: 40px;
+      }
+
+      hr {
+        margin-bottom: 30px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      ul {
+
+        li {
+          padding: 10px 0;
+          border-bottom: 1px solid @purple;
+
+          &:first-child {
+            border-top: 1px solid @purple;
+          }
+
+          h5 {
+            font-weight: 700;
+            font-size: 1.6rem;
+          }
+
+          .answer {
+            display: none;
+            margin-top: 20px;
+
+            p {}
+          }
+        }
+      }
+    }
+  }
+}
+

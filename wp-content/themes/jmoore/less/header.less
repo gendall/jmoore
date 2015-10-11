@@ -1,0 +1,67 @@
+/**************************************************************************************************
+ *
+ *  @Section: Header Specific Styles
+ *
+***************************************************************************************************/
+header {
+  background: @white;
+
+  &:after { .clear; }
+
+  .row-one,
+  .row-two {
+
+    .container {}
+  }
+
+  .row-one {
+
+    .container {
+      padding-top: 60px;
+
+      .logo {
+        line-height: 0.8;
+
+        a {
+          font-size: 4.3rem;
+          color: @pink;
+        }
+      }
+    }
+  }
+
+  .row-two {
+    border-top: 1px solid @purple;
+    border-bottom: 1px solid @purple;
+    margin: 0 0 5px;
+  }
+}
+
+
+/**************************************************************************************************
+ *
+ *  @Section: Navigation Specific Styles
+ *
+***************************************************************************************************/
+.nav {
+  text-align: right;
+
+  li {
+    display: inline-block;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.current {
+      border-bottom: 2px solid @pink;
+      margin-bottom: -2px;
+    }
+
+    a {
+      font-size: 1.6rem;
+      padding: 4px 0 3px;
+    }
+  }
+}
