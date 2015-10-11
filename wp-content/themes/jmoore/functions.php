@@ -5,23 +5,15 @@
  * @package jmoore
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
-// Control how long the blog post excerpt is on the blog page.
-add_filter('excerpt_length', 'my_excerpt_length');
-function my_excerpt_length($length) {
-	return 22;
-}
-
 // Featured Images
 add_theme_support( 'post-thumbnails' );
 
+// Control how long the blog post excerpt is on the blog page.
+add_filter('excerpt_length', 'my_excerpt_length');
+
+function my_excerpt_length($length) {
+	return 22;
+}
 
 if ( ! function_exists( 'jmoore_setup' ) ) :
 /**
@@ -61,8 +53,8 @@ function jmoore_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'jmoore' ),
-		'secondary' => __( 'Secondary Menu', 'jmoore' ),
+		'primary'		=> __( 'Primary Menu', 'jmoore' ),
+		'secondary'	=> __( 'Secondary Menu', 'jmoore' ),
 	) );
 
 	/*
@@ -91,8 +83,8 @@ function jmoore_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'jmoore_custom_background_args', array(
-		'default-color' => '',
-		'default-image' => '',
+		'default-color'		=> '',
+		'default-image'		=> '',
 	) ) );
 }
 endif; // jmoore_setup
@@ -105,13 +97,13 @@ add_action( 'after_setup_theme', 'jmoore_setup' );
  */
 function jmoore_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'jmoore' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'				=> __( 'Sidebar', 'jmoore' ),
+		'id'					=> 'sidebar-1',
+		'description'		=> '',
+		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'			=> '</h1>',
 	) );
 }
 add_action( 'widgets_init', 'jmoore_widgets_init' );
@@ -122,10 +114,10 @@ add_action( 'widgets_init', 'jmoore_widgets_init' );
 function jmoore_scripts() {
 	if ( ( 'wp-login.php' !== $GLOBALS['pagenow'] ) && ( ! is_admin() ) ) {
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.1.3', true );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.1.3', true );
 		wp_enqueue_script( 'jquery' );
-		// wp_register_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(), '1.0.0', true );
-		// wp_enqueue_script( 'libs' );
+		wp_register_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'libs' );
 		wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'main' );
 	}
@@ -152,32 +144,32 @@ function create_post_type() {
 	register_post_type( 'books',
 		array(
 			'labels' => array(
-				'name'                => __( 'Books' ),
-				'singular_name'       => __( 'Book' ),
-				'description'         => __( 'List of works written by Author Jenny Moore' ),
-				'add_new'             => __( 'Add Book' ),
-				'add_new_item'        => __( 'Add New Book' ),
-				'not_found'           => __( 'Not found', 'text-domain' ),
-				'not_found_in_trash'  => __( 'Not found in trash', 'text_domain' ),
+				'name'					=> __( 'Books' ),
+				'singular_name'		=> __( 'Book' ),
+				'description'			=> __( 'List of works written by Author Jenny Moore' ),
+				'add_new'				=> __( 'Add Book' ),
+				'add_new_item'		=> __( 'Add New Book' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'              => true,
-			'has_archive'         => false,
+			'public'						=> true,
+			'has_archive'				=> false,
 		)
 	);
 
 	register_post_type( 'slides',
 		array(
 			'labels' => array(
-				'name'                => __( 'Hero Carousel' ),
-				'singular_name'       => __( 'slide' ),
-				'description'         => __( 'Slides for the Homepage Hero Carousel' ),
-				'add_new'             => __( 'Add Slide' ),
-				'add_new_item'        => __( 'Add New Slide' ),
-				'not_found'           => __( 'Not found', 'text-domain' ),
-				'not_found_in_trash'  => __( 'Not found in trash', 'text_domain' ),
+				'name'					=> __( 'Hero Carousel' ),
+				'singular_name'		=> __( 'slide' ),
+				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
+				'add_new'				=> __( 'Add Slide' ),
+				'add_new_item'		=> __( 'Add New Slide' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'              => true,
-			'has_archive'         => false,
+			'public'						=> true,
+			'has_archive'				=> false,
 		)
 	);
 }

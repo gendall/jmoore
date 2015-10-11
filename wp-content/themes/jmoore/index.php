@@ -11,36 +11,23 @@
  * @package jmoore
  */
 
-get_header(); ?>
+get_header(); ?>  
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="blogPosts">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		<article>
+			<div class="featured-media-container">
+				<?php the_post_video() ?>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+			</div>
+			<div class="summary">
+				<h1 class="blogTitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+				<?php the_excerpt(); ?>
+				<span class="theDate">by <?php the_author(); ?></span>
+			</div>
+		</article>
+		<?php endwhile; ?>
+	</section> <!-- /#blogPosts -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'excerpt', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>
