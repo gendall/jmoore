@@ -4,37 +4,38 @@
  *
 ***************************************************************************************************/
 header {
-  background: @white;
+	background: @white;
 
-  &:after { .clear; }
+	&:after { .clear; }
 
-  .row-one,
-  .row-two {
+	.row-one,
+	.row-two {
 
-    .container {}
-  }
+		.container {}
+	}
 
-  .row-one {
+	.row-one {
 
-    .container {
-      padding-top: 60px;
+		.container {
+			padding-top: 60px;
 
-      .logo {
-        line-height: 0.8;
+			.logo {
+				line-height: 0.8;
 
-        a {
-          font-size: 4.3rem;
-          color: @pink;
-        }
-      }
-    }
-  }
+				a {
+					font-size: 4.3rem;
+					color: @pink;
+					position: relative;
+				}
+			}
+		}
+	}
 
-  .row-two {
-    border-top: 1px solid @purple;
-    border-bottom: 1px solid @purple;
-    margin: 0 0 5px;
-  }
+	.row-two {
+		border-top: 1px solid @purple;
+		border-bottom: 1px solid @purple;
+		margin: 0 0 5px;
+	}
 }
 
 
@@ -44,24 +45,46 @@ header {
  *
 ***************************************************************************************************/
 .nav {
-  text-align: right;
+	text-align: right;
 
-  li {
-    display: inline-block;
-    margin-left: 10px;
+	li {
+		display: inline-block;
+		margin-left: 10px;
 
-    &:first-child {
-      margin-left: 0;
-    }
+		&:first-child {
+			margin-left: 0;
+		}
 
-    &.current {
-      border-bottom: 2px solid @pink;
-      margin-bottom: -2px;
-    }
+		&.current {
+			border-bottom: 2px solid @pink;
+			margin-bottom: -2px;
+		}
 
-    a {
-      font-size: 1.6rem;
-      padding: 4px 0 3px;
-    }
-  }
+		a {
+			font-size: 1.6rem;
+			padding: 4px 0 3px;
+			position: relative;
+			display: block;
+
+			&:after {
+				background-color: @pink;
+				height: 5px;
+				position: absolute;
+				bottom: 4px;
+				left: 0;
+				right: 0;
+				content: '';
+				opacity: 0;
+				.transition();
+			}
+
+			&:hover {
+
+				&:after {
+					bottom: -1px;
+					opacity: 1;
+				}
+			}
+		}
+	}
 }

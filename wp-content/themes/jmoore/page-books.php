@@ -59,6 +59,8 @@ get_header(); ?>
 
 				<div class="column-three">
 					<a href="<?php the_field('book_amazon_url'); ?>">Amazon URL</a>
+					<a href="<?php the_field('book_amazon_url'); ?>">Amazon URL</a>
+					<a href="<?php the_field('book_amazon_url'); ?>">Amazon URL</a>
 				</div> <!-- /.column-three -->
 			</div> <!-- .novel-summary -->
 

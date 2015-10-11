@@ -83,6 +83,13 @@
   transform: translate(@x, @y);
 }
 
+.transition(@property: all, @duration: 0.2s, @ease: ease-out) {
+  -webkit-transition: @property @duration @ease;
+  -moz-transition: @property @duration @ease;
+  -o-transition: @property @duration @ease;
+  transition: @property @duration @ease;
+}
+
 
 /**************************************************************************************************
  *

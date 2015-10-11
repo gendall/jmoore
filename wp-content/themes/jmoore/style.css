@@ -196,7 +196,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.4rem;
   line-height: 1.3;
-  background: #FFF8F6;
+  background: #FFFFFF;
   color: #6c6461;
 }
 a {
@@ -469,6 +469,7 @@ header .row-one .container .logo {
 header .row-one .container .logo a {
   font-size: 4.3rem;
   color: #FD597F;
+  position: relative;
 }
 header .row-two {
   border-top: 1px solid #E2B6D9;
@@ -497,6 +498,23 @@ header .row-two {
 .nav li a {
   font-size: 1.6rem;
   padding: 4px 0 3px;
+  position: relative;
+  display: block;
+}
+.nav li a:after {
+  background-color: #FD597F;
+  height: 5px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  content: '';
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+.nav li a:hover:after {
+  bottom: -1px;
+  opacity: 1;
 }
 /**************************************************************************************************
  *
@@ -757,6 +775,47 @@ section .container {
 .about-section .container .main-content ul li .answer {
   display: none;
   margin-top: 20px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Blog Page Specific Styles
+ *
+***************************************************************************************************/
+.blog-landing .container {
+  padding: 50px 0;
+}
+.blog-landing .container article {
+  width: 90%;
+  margin: 0 auto 50px;
+}
+.blog-landing .container article:last-child {
+  margin: 0 auto;
+}
+.blog-landing .container article .blog-title a {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.blog-landing .container article .blog-title p {
+  margin-bottom: 10px;
+}
+.blog-landing .container article .featured-media-container {
+  width: 60%;
+  min-width: 640px;
+  max-height: 450px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.blog-landing .container article .featured-media-container a {
+  display: block;
+}
+.blog-landing .container article .featured-media-container iframe {
+  width: 100%;
+}
+.blog-landing .container article .summary .blog-author {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 100;
 }
 /**************************************************************************************************
  *

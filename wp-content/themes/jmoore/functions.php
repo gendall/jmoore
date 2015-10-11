@@ -12,7 +12,8 @@ add_theme_support( 'post-thumbnails' );
 add_filter('excerpt_length', 'my_excerpt_length');
 
 function my_excerpt_length($length) {
-	return 22;
+
+	return rand(45, 99);
 }
 
 if ( ! function_exists( 'jmoore_setup' ) ) :
