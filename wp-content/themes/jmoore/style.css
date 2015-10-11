@@ -196,7 +196,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.4rem;
   line-height: 1.3;
-  background: #fff8f6;
+  background: #FFF8F6;
   color: #6c6461;
 }
 a {
@@ -224,7 +224,7 @@ hr {
   border-bottom: 2px solid #000000;
 }
 hr.purple-hr {
-  border-color: #e2b6d9;
+  border-color: #E2B6D9;
 }
 .main-content-wrapper {
   background-image: url(img/bg-main.jpg);
@@ -241,7 +241,7 @@ hr.purple-hr {
   line-height: 0;
 }
 .content {
-  background: #fff8f6;
+  background: #FFF8F6;
 }
 section {
   width: 100%;
@@ -307,8 +307,8 @@ i.icon-dbl-arrow-white {
 /** THEME
 ===================================*/
 .bx-wrapper .bx-viewport {
-  border: 7px solid #fff8f6;
-  background: #ffffff;
+  border: 7px solid #FFF8F6;
+  background: #FFFFFF;
   /*fix other elements on the page moving (on Chrome)*/
   -webkit-transform: translatez(0);
   -ms-transform: translatez(0);
@@ -324,7 +324,7 @@ i.icon-dbl-arrow-white {
 /* LOADER */
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: url(img/bx_loader.gif) center center no-repeat #ffffff;
+  background: url(img/bx_loader.gif) center center no-repeat #fff;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -339,9 +339,8 @@ i.icon-dbl-arrow-white {
   font-family: Arial;
   font-weight: bold;
   color: #666666;
-  border-bottom: 1px solid #e2b6d9;
+  border-bottom: 1px solid #E2B6D9;
   padding-bottom: 2px;
-  width: -webkit-calc(100% - 14px);
   width: calc(100% - 14px);
 }
 .bx-wrapper .bx-pager .bx-pager-item,
@@ -452,7 +451,7 @@ i.icon-dbl-arrow-white {
  *
 ***************************************************************************************************/
 header {
-  background: #ffffff;
+  background: #FFFFFF;
 }
 header:after {
   content: '';
@@ -469,11 +468,11 @@ header .row-one .container .logo {
 }
 header .row-one .container .logo a {
   font-size: 4.3rem;
-  color: #fd597f;
+  color: #FD597F;
 }
 header .row-two {
-  border-top: 1px solid #e2b6d9;
-  border-bottom: 1px solid #e2b6d9;
+  border-top: 1px solid #E2B6D9;
+  border-bottom: 1px solid #E2B6D9;
   margin: 0 0 5px;
 }
 /**************************************************************************************************
@@ -492,7 +491,7 @@ header .row-two {
   margin-left: 0;
 }
 .nav li.current {
-  border-bottom: 2px solid #fd597f;
+  border-bottom: 2px solid #FD597F;
   margin-bottom: -2px;
 }
 .nav li a {
@@ -507,7 +506,7 @@ header .row-two {
 footer {
   width: 75%;
   min-width: 900px;
-  background-color: #fd597f;
+  background-color: #FD597F;
   margin: auto;
   padding-top: 8px;
 }
@@ -549,12 +548,12 @@ footer .content .footer-nav li:first-child a {
   padding-left: 0;
 }
 footer .content .footer-nav li a {
-  color: #f9c0cc;
+  color: #F9C0CC;
   line-height: 14px;
   margin: 7px 0;
   margin-left: 10px;
   padding-left: 10px;
-  border-left: 1px solid #f9c0cc;
+  border-left: 1px solid #F9C0CC;
 }
 footer .content .footer-social-links li {
   margin-left: 6px;
@@ -591,8 +590,8 @@ footer .content .footer-social-links li a.goodreads-link {
  *
 ***************************************************************************************************/
 .btn {
-  background-color: #fd597f;
-  color: #ffffff;
+  background-color: #FD597F;
+  color: #FFFFFF;
   font-size: 1.8rem;
   text-align: center;
   padding: 10px 20px;
@@ -605,10 +604,10 @@ footer .content .footer-social-links li a.goodreads-link {
  *
 ***************************************************************************************************/
 section .container {
-  background-color: #fff8f6;
+  background-color: #FFF8F6;
 }
 .hero-carousel .container {
-  background-color: #fff8f6;
+  background-color: #FFF8F6;
 }
 .hero-carousel .container .bxslider li {
   position: relative;
@@ -662,7 +661,7 @@ section .container {
   height: auto;
   padding-bottom: 37%;
   float: left;
-  border: 1px solid #fd597f;
+  border: 1px solid #FD597F;
   position: relative;
   overflow: hidden;
 }
@@ -674,10 +673,9 @@ section .container {
   left: 0;
   right: 0;
   bottom: 0;
-  border: 5px solid #ffffff;
+  border: 5px solid #FFFFFF;
 }
 .featured-stories .container .featured-story .img-container img {
-  width: -webkit-calc(100% - 10px);
   width: calc(100% - 10px);
   z-index: 0;
   position: absolute;
@@ -699,7 +697,7 @@ section .container {
 }
 .featured-stories .container .featured-story .content-container a {
   font-size: 1.8rem;
-  color: #fd597f;
+  color: #FD597F;
 }
 /**************************************************************************************************
  *
@@ -707,7 +705,7 @@ section .container {
  *
 ***************************************************************************************************/
 .about-section .container {
-  background: #fff8f6;
+  background: #FFF8F6;
   padding: 50px 40px;
 }
 .about-section .container:after {
@@ -722,7 +720,7 @@ section .container {
   width: 30%;
 }
 .about-section .container .sidebar img.headshot {
-  border: 1px solid #fd597f;
+  border: 1px solid #FD597F;
   padding: 5px;
 }
 .about-section .container .main-content {
@@ -731,8 +729,8 @@ section .container {
 }
 .about-section .container .main-content h1 {
   font-size: 4.0rem;
-  color: #fd597f;
-  border-bottom: 1px solid #e2b6d9;
+  color: #FD597F;
+  border-bottom: 1px solid #E2B6D9;
   margin-bottom: 30px;
 }
 .about-section .container .main-content h2 {
@@ -747,10 +745,10 @@ section .container {
 }
 .about-section .container .main-content ul li {
   padding: 10px 0;
-  border-bottom: 1px solid #e2b6d9;
+  border-bottom: 1px solid #E2B6D9;
 }
 .about-section .container .main-content ul li:first-child {
-  border-top: 1px solid #e2b6d9;
+  border-top: 1px solid #E2B6D9;
 }
 .about-section .container .main-content ul li h5 {
   font-weight: 700;
@@ -813,13 +811,13 @@ section .container {
  *
 ***************************************************************************************************/
 .tabs-section .container {
-  background-color: #fff8f6;
+  background-color: #FFF8F6;
   padding-bottom: 80px;
 }
 .tabs-section .container ul {
   margin: 0 7px;
   padding: 7px 0 0;
-  border-bottom: 1px solid #e2b6d9;
+  border-bottom: 1px solid #E2B6D9;
   height: 67px;
 }
 .tabs-section .container ul:after {
@@ -834,7 +832,7 @@ section .container {
   height: 60px;
   position: relative;
   float: left;
-  box-shadow: inset 0 0 0 1px #e2b6d9;
+  box-shadow: inset 0 0 0 1px #E2B6D9;
 }
 .tabs-section .container ul li:last-child {
   margin-left: -1px;
@@ -855,12 +853,12 @@ section .container {
   transform: translate(-50%, -50%);
 }
 .tabs-section .container ul li a.current {
-  color: #fd597f;
-  border-bottom: 3px solid #fd597f;
+  color: #FD597F;
+  border-bottom: 3px solid #FD597F;
 }
 .novels-section .container,
 .short-stories-section .container {
-  background-color: #fff8f6;
+  background-color: #FFF8F6;
   margin: 0 auto;
 }
 .novel-summary,
@@ -889,14 +887,14 @@ section .container {
   width: 16%;
   margin-right: 4%;
   float: left;
-  border: 1px solid #e2b6d9;
+  border: 1px solid #E2B6D9;
   padding: 9px;
 }
 .novel-summary .column-two,
 .short-story-summary .column-two {
   width: 58%;
   float: left;
-  border-right: 1px solid #e2b6d9;
+  border-right: 1px solid #E2B6D9;
 }
 .novel-summary .column-two h4,
 .short-story-summary .column-two h4 {
@@ -908,7 +906,7 @@ section .container {
 }
 .novel-summary .column-two a.link-continueReading,
 .short-story-summary .column-two a.link-continueReading {
-  color: #fd597f;
+  color: #FD597F;
 }
 .novel-summary .column-three,
 .short-story-summary .column-three {
@@ -916,7 +914,7 @@ section .container {
   float: right;
 }
 .novels-section .containter {
-  background-color: #fff8f6;
+  background-color: #FFF8F6;
 }
 .short-stories-section {
   display: none;
