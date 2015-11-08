@@ -117,8 +117,10 @@ function jmoore_scripts() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.1.3', true );
 		wp_enqueue_script( 'jquery' );
+		
 		wp_register_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'libs' );
+		
 		wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'main' );
 	}
