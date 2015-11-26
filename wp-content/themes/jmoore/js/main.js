@@ -11,6 +11,12 @@ $(function() {
 		$('.' + tabId + '-section').show();
 	});
 
+	$('.question').on('click', function(e) {
+		e.preventDefault();
+		$(this).next('.answer').toggleClass('open');
+
+	});
+
 	var slider = $('.bxslider').bxSlider({
 		preloadImages: 'all',
 		auto: true,

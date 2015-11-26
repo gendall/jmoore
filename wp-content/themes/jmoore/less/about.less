@@ -5,73 +5,85 @@
 ***************************************************************************************************/
 .about-section {
 
-  .container {
-    background: @off-white;
-    padding: 50px 40px;
+	.container {
+		background: @off-white;
+		padding: 50px 40px;
 
-    &:after { .clear; }
+		&:after { .clear; }
 
-    .sidebar {
-      float: left;
-      width: 30%;
+		.sidebar {
+			float: left;
+			width: 30%;
 
-      img {
+			img {
 
-        &.headshot {
-          border: 1px solid @pink;
-          padding: 5px;
-        }
-      }
-    }
+				&.headshot {
+					border: 1px solid @pink;
+					padding: 5px;
+				}
+			}
+		}
 
-    .main-content {
-      float: right;
-      width: 65%;
+		.main-content {
+			float: right;
+			width: 65%;
 
-      h1 {
-        font-size: 4.0rem;
-        color: @pink;
-        border-bottom: 1px solid @purple;
-        margin-bottom: 30px;
-      }
+			h1 {
+				font-family: @hd-thin;
+				font-size: 4.0rem;
+				color: @pink;
+				border-bottom: 1px solid @purple;
+				margin-bottom: 30px;
+			}
 
-      h2 {
-        font-size: 2.2rem;
-        margin-top: 40px;
-      }
+			h2 {
+				font-size: 2.2rem;
+				margin-top: 40px;
+			}
 
-      hr {
-        margin-bottom: 30px;
-      }
+			hr {
+				margin-bottom: 30px;
+			}
 
-      p {
-        margin-bottom: 20px;
-      }
+			p {
+				margin-bottom: 20px;
+			}
 
-      ul {
+			ul {
 
-        li {
-          padding: 10px 0;
-          border-bottom: 1px solid @purple;
+				li {
+					padding: 10px 0;
+					border-bottom: 1px solid @purple;
 
-          &:first-child {
-            border-top: 1px solid @purple;
-          }
+					&:first-child {
+						border-top: 1px solid @purple;
+					}
 
-          h5 {
-            font-weight: 700;
-            font-size: 1.6rem;
-          }
+					h5 {
+						font-family: @ht-bold;
+						font-size: 1.6rem;
+						cursor: pointer;
+					}
 
-          .answer {
-            display: none;
-            margin-top: 20px;
+					.answer {
+						max-height: 0;
+						overflow: hidden;
+						.transition(max-height, 1.2s, ease-in-out);
 
-            p {}
-          }
-        }
-      }
-    }
-  }
+						&.open {
+							max-height: 800px;
+						}
+
+						p {
+
+							&:first-child {
+								margin-top: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 

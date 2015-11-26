@@ -1,10 +1,10 @@
 /*
-  Theme Name: Jenny Moore's WP Theme
-  Description: Theme for Author, Jenny Moore's, Wordpress Site
-  Version: 1.0.0
-  License: The MIT License (MIT)
-  License URI: http://opensource.org/licenses/MIT
-  Text Domain: jmoore
+	Theme Name: Jenny Moore's WP Theme
+	Description: Theme for Author, Jenny Moore's, Wordpress Site
+	Version: 1.0.0
+	License: The MIT License (MIT)
+	License URI: http://opensource.org/licenses/MIT
+	Text Domain: jmoore
 */
 /**********************************************************************************************************************
  *  
@@ -28,6 +28,9 @@
  *  @Section: Variables
  *
 ***************************************************************************************************/
+/************************************************
+ *  @Section: Font Variables
+*************************************************/
 /**************************************************************************************************
  *
  *  @Section: Mixins
@@ -193,7 +196,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'harriet_textlight', 'harriet_textregular', 'Times New Roman', Times, Serif;
   font-size: 1.4rem;
   line-height: 1.3;
   background: #FFFFFF;
@@ -287,6 +290,7 @@ i {
   background-size: 100% auto;
   display: inline-block;
   margin-left: 8px;
+  vertical-align: middle;
 }
 i.icon-dbl-arrow-pink {
   background-image: url(img/arrow-dbl-pink.png);
@@ -491,6 +495,7 @@ header .row-one .container .logo {
   line-height: 0.8;
 }
 header .row-one .container .logo a {
+  font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 4.3rem;
   color: #FD597F;
   position: relative;
@@ -520,6 +525,7 @@ header .row-two {
   margin-bottom: -2px;
 }
 .nav li a {
+  font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 1.6rem;
   padding: 4px 0 3px;
   position: relative;
@@ -539,6 +545,16 @@ header .row-two {
 .nav li a:hover:after {
   bottom: -1px;
   opacity: 1;
+}
+.nav li.current-menu-item a:after {
+  background-color: #FD597F;
+  height: 5px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  content: '';
 }
 /**************************************************************************************************
  *
@@ -632,6 +648,7 @@ footer .content .footer-social-links li a.goodreads-link {
  *
 ***************************************************************************************************/
 .btn {
+  font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
   background-color: #FD597F;
   color: #FFFFFF;
   font-size: 1.8rem;
@@ -639,6 +656,11 @@ footer .content .footer-social-links li a.goodreads-link {
   padding: 10px 20px;
   display: inline-block;
   white-space: nowrap;
+}
+.links {
+  font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
+  font-size: 2rem;
+  color: #FD597F;
 }
 /**************************************************************************************************
  *
@@ -663,6 +685,7 @@ section .container {
   transform: translateY(-50%);
 }
 .hero-carousel .container .bxslider li .slide-content h1 {
+  font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 3.4rem;
   font-weight: 100;
   margin-bottom: 35px;
@@ -738,6 +761,7 @@ section .container {
   margin-bottom: 15px;
 }
 .featured-stories .container .featured-story .content-container a {
+  font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
   font-size: 1.8rem;
   color: #FD597F;
 }
@@ -770,6 +794,7 @@ section .container {
   width: 65%;
 }
 .about-section .container .main-content h1 {
+  font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 4.0rem;
   color: #FD597F;
   border-bottom: 1px solid #E2B6D9;
@@ -793,11 +818,19 @@ section .container {
   border-top: 1px solid #E2B6D9;
 }
 .about-section .container .main-content ul li h5 {
-  font-weight: 700;
+  font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
   font-size: 1.6rem;
+  cursor: pointer;
 }
 .about-section .container .main-content ul li .answer {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.2s ease-in-out;
+}
+.about-section .container .main-content ul li .answer.open {
+  max-height: 800px;
+}
+.about-section .container .main-content ul li .answer p:first-child {
   margin-top: 20px;
 }
 /**************************************************************************************************
@@ -928,6 +961,7 @@ section .container {
   cursor: pointer;
 }
 .tabs-section .container ul li a span {
+  white-space: nowrap;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -987,9 +1021,9 @@ section .container {
 .short-story-summary .column-two p {
   margin-bottom: 30px;
 }
-.novel-summary .column-two a.link-continueReading,
-.short-story-summary .column-two a.link-continueReading {
-  color: #FD597F;
+.novel-summary .column-two a i.icon-dbl-arrow-pink,
+.short-story-summary .column-two a i.icon-dbl-arrow-pink {
+  height: 11px;
 }
 .novel-summary .column-three,
 .short-story-summary .column-three {

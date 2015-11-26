@@ -1,10 +1,10 @@
 /*
-  Theme Name: Jenny Moore's WP Theme
-  Description: Theme for Author, Jenny Moore's, Wordpress Site
-  Version: 1.0.0
-  License: The MIT License (MIT)
-  License URI: http://opensource.org/licenses/MIT
-  Text Domain: jmoore
+	Theme Name: Jenny Moore's WP Theme
+	Description: Theme for Author, Jenny Moore's, Wordpress Site
+	Version: 1.0.0
+	License: The MIT License (MIT)
+	License URI: http://opensource.org/licenses/MIT
+	Text Domain: jmoore
 */
 
 /**********************************************************************************************************************
@@ -46,10 +46,38 @@
 @tablet-landscape:	1024px;
 @tablet-portrait:		768px;
 @mobile:				320px;
-@desktop:				1200px;
+@desktop:				1300px;
 
-// Fonts
-@default-font: Arial, Helvetica, Sans-Serif;
+
+/************************************************
+ *  @Section: Font Variables
+*************************************************/
+// HD = Harriet Display
+@default-font: 'Times New Roman', Times, Serif;;
+@hd: 'harriet_displayregular', @default-font;
+@hd-thin: 'harriet_displaythin', @hd;
+@hd-light: 'harriet_displaylight', @hd;
+@hd-medium: 'harriet_displaymedium', @hd;
+@hd-black: 'harriet_displayblack', @hd;
+@hd-bold: 'harriet_displaybold', @hd;
+// Italics - Harriet Display
+@hd-italic: 'harriet_displayitalic', @hd;
+@hd-thin-italic: 'harriet_displaythin_italic', @hd;
+@hd-light-italic: 'harriet_displaylight_italic', @hd;
+@hd-medium-italic: 'harriet_displaymedium_italic', @hd;
+@hd-black-italic: 'harriet_displayblack_italic', @hd;
+@hd-bold-italic: 'harriet_displaybold_italic', @hd;
+
+// HT = Harriet Text
+@ht: 'harriet_textregular', @default-font;
+@ht-light: 'harriet_textlight', @ht;
+@ht-medium: 'harriet_textmedium', @ht;
+@ht-bold: 'harriet_textbold', @ht;
+// Italics - Harriet Text
+@ht-italic: 'harriet_textitalic', @ht;
+@ht-light-italic: 'harriet_textlight_italic', @ht;
+@ht-medium-italic: 'harriet_textmedium_italic', @ht;
+@ht-bold-italic: 'harriet_textbold_italic', @ht;
 
 
 /**************************************************************************************************
@@ -58,36 +86,36 @@
  *
 ***************************************************************************************************/
 .clear {
-  content: '';
-  display: block;
-  clear: both;
-  height: 0;
-  line-height: 0;
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
 }
 
 .centered-horizontally(@x: -50%;) {
-  -webkit-transform: translatex(@x);
-  -ms-transform: translatex(@x);
-  transform: translatex(@x);
+	-webkit-transform: translatex(@x);
+	-ms-transform: translatex(@x);
+	transform: translatex(@x);
 }
 
 .centered-vertically(@y: -50%;) {
-  -webkit-transform: translateY(@y);
-  -ms-transform: translateY(@y);
-  transform: translateY(@y);
+	-webkit-transform: translateY(@y);
+	-ms-transform: translateY(@y);
+	transform: translateY(@y);
 }
 
 .centered-both(@x: -50%, @y: -50%) {
-  -webkit-transform: translate(@x, @y);
-  -ms-transform: translate(@x, @y);
-  transform: translate(@x, @y);
+	-webkit-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
 }
 
 .transition(@property: all, @duration: 0.2s, @ease: ease-out) {
-  -webkit-transition: @property @duration @ease;
-  -moz-transition: @property @duration @ease;
-  -o-transition: @property @duration @ease;
-  transition: @property @duration @ease;
+	-webkit-transition: @property @duration @ease;
+	-moz-transition: @property @duration @ease;
+	-o-transition: @property @duration @ease;
+	transition: @property @duration @ease;
 }
 
 

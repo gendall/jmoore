@@ -54,7 +54,7 @@ get_header(); ?>
 					<h4><?php the_title(); ?></h4>
 					<hr class="purple-hr">
 					<p><?php the_field('book_short_description'); ?></p>
-					<a class="link-continueReading" href="">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
+					<a class="links link-continueReading" href="">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 				</div> <!-- /.column-two -->
 
 				<div class="column-three">
@@ -89,7 +89,7 @@ get_header(); ?>
 					<h4><?php the_title(); ?></h4>
 					<hr class="purple-hr">
 					<p><?php the_field('book_short_description'); ?></p>
-					<a class="link-continueReading" href="">Continue Reading <i class="icon-double-arrow"></i></a>
+					<a class="links link-continueReading" href="">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 				</div> <!-- /.column-two -->
 
 				<div class="column-three">
