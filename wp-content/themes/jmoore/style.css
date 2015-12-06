@@ -480,6 +480,7 @@ i.icon-dbl-arrow-white {
 ***************************************************************************************************/
 header {
   background: #FFFFFF;
+  padding-bottom: 5px;
 }
 header:after {
   content: '';
@@ -533,28 +534,22 @@ header .row-two {
 }
 .nav li a:after {
   background-color: #FD597F;
-  height: 5px;
+  height: 2px;
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   left: 0;
   right: 0;
   content: '';
   opacity: 0;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease-in-out;
 }
 .nav li a:hover:after {
-  bottom: -1px;
+  bottom: -2px;
   opacity: 1;
 }
 .nav li.current-menu-item a:after {
-  background-color: #FD597F;
-  height: 5px;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
+  bottom: -2px;
   opacity: 1;
-  content: '';
 }
 /**************************************************************************************************
  *
