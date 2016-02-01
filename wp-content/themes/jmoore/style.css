@@ -267,6 +267,15 @@ strong {
   height: 0;
   line-height: 0;
 }
+.main-page-title {
+  width: 90%;
+  font-size: 4rem;
+  font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
+  color: #FD597F;
+  margin: 0 auto 30px;
+  padding: 0;
+  border-bottom: 1px solid #E2B6D9;
+}
 .content {
   background: #FFF8F6;
 }
@@ -652,6 +661,9 @@ footer .content .footer-social-links li a.goodreads-link {
   display: inline-block;
   white-space: nowrap;
 }
+.btn:hover {
+  background-color: #E71573;
+}
 .links {
   font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
   font-size: 2rem;
@@ -665,13 +677,13 @@ footer .content .footer-social-links li a.goodreads-link {
 section .container {
   background-color: #FFF8F6;
 }
-.hero-carousel .container {
+.carousel .container {
   background-color: #FFF8F6;
 }
-.hero-carousel .container .bxslider li {
+.carousel .container .bxslider li {
   position: relative;
 }
-.hero-carousel .container .bxslider li .slide-content {
+.carousel .container .bxslider li .slide-content {
   width: 45%;
   position: absolute;
   top: 50%;
@@ -679,16 +691,16 @@ section .container {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.hero-carousel .container .bxslider li .slide-content h1 {
+.carousel .container .bxslider li .slide-content h1 {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 3.4rem;
   font-weight: 100;
   margin-bottom: 35px;
 }
-.hero-carousel .container .bxslider li .slide-content.right {
+.carousel .container .bxslider li .slide-content.right {
   left: 45%;
 }
-.hero-carousel .container .bxslider li .slide-content.left {
+.carousel .container .bxslider li .slide-content.left {
   right: 45%;
 }
 .featured-stories .container {
@@ -820,7 +832,7 @@ section .container {
 .about-section .container .main-content ul li .answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1.2s ease-in-out;
+  transition: max-height 0.8s ease-in-out;
 }
 .about-section .container .main-content ul li .answer.open {
   max-height: 800px;
@@ -833,38 +845,57 @@ section .container {
  *  @Section: Blog Page Specific Styles
  *
 ***************************************************************************************************/
-.blog-landing .container {
+.blog-landing .container,
+.news-landing .container,
+.ahoy-landing .container {
   padding: 50px 0;
+  margin-bottom: 25px;
 }
-.blog-landing .container article {
+.blog-landing .container article,
+.news-landing .container article,
+.ahoy-landing .container article {
   width: 90%;
   margin: 0 auto 50px;
 }
-.blog-landing .container article:last-child {
+.blog-landing .container article:last-child,
+.news-landing .container article:last-child,
+.ahoy-landing .container article:last-child {
   margin: 0 auto;
 }
-.blog-landing .container article .blog-title a {
+.blog-landing .container article .blog-title a,
+.news-landing .container article .blog-title a,
+.ahoy-landing .container article .blog-title a {
   font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.blog-landing .container article .blog-title p {
+.blog-landing .container article .blog-title p,
+.news-landing .container article .blog-title p,
+.ahoy-landing .container article .blog-title p {
   margin-bottom: 10px;
 }
-.blog-landing .container article .featured-media-container {
+.blog-landing .container article .featured-media-container,
+.news-landing .container article .featured-media-container,
+.ahoy-landing .container article .featured-media-container {
   width: 60%;
   min-width: 640px;
   max-height: 450px;
   overflow: hidden;
   margin-bottom: 15px;
 }
-.blog-landing .container article .featured-media-container a {
+.blog-landing .container article .featured-media-container a,
+.news-landing .container article .featured-media-container a,
+.ahoy-landing .container article .featured-media-container a {
   display: block;
 }
-.blog-landing .container article .featured-media-container iframe {
+.blog-landing .container article .featured-media-container iframe,
+.news-landing .container article .featured-media-container iframe,
+.ahoy-landing .container article .featured-media-container iframe {
   width: 100%;
 }
-.blog-landing .container article .summary .blog-author {
+.blog-landing .container article .summary .blog-author,
+.news-landing .container article .summary .blog-author,
+.ahoy-landing .container article .summary .blog-author {
   font-size: 1.2rem;
   font-style: italic;
   font-weight: 100;
@@ -972,6 +1003,7 @@ section .container {
 .short-stories-section .container {
   background-color: #FFF8F6;
   margin: 0 auto;
+  overflow: hidden;
 }
 .novel-summary,
 .short-story-summary {
@@ -1030,4 +1062,35 @@ section .container {
 }
 .short-stories-section {
   display: none;
+}
+.news-landing .container article {
+  border-bottom: 1px solid #E2B6D9;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.news-landing .container article .news-date {
+  font-size: 2.2rem;
+  font-family: 'harriet_textlight', 'harriet_textregular', 'Times New Roman', Times, Serif;
+}
+.news-landing .container article .news-summary {
+  font-size: 1.6rem;
+  font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
+  margin-bottom: 15px;
+}
+.news-landing .container article .details-news {
+  width: 75%;
+}
+.news-landing .container article .btn {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+}
+.news-landing .container article:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.news-landing .container article:last-child .btn {
+  bottom: 0;
 }

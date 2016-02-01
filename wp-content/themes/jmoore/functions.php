@@ -144,6 +144,22 @@ add_action( 'wp_enqueue_scripts', 'jmoore_styles' );
  * Custom Post Types.
  */
 function create_post_type() {
+	register_post_type( 'slides',
+		array(
+			'labels' => array(
+				'name'					=> __( 'Hero Carousel' ),
+				'singular_name'		=> __( 'slide' ),
+				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
+				'add_new'				=> __( 'Add Slide' ),
+				'add_new_item'		=> __( 'Add New Slide' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
+			),
+			'public'						=> true,
+			'has_archive'				=> false,
+		)
+	);
+
 	register_post_type( 'books',
 		array(
 			'labels' => array(
@@ -160,14 +176,46 @@ function create_post_type() {
 		)
 	);
 
-	register_post_type( 'slides',
+	register_post_type( 'news',
 		array(
 			'labels' => array(
-				'name'					=> __( 'Hero Carousel' ),
-				'singular_name'		=> __( 'slide' ),
-				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
-				'add_new'				=> __( 'Add Slide' ),
-				'add_new_item'		=> __( 'Add New Slide' ),
+				'name'					=> __( 'News' ),
+				'singular_name'		=> __( 'News Article' ),
+				'description'			=> __( 'List of Events and News' ),
+				'add_new'				=> __( 'Add News Article' ),
+				'add_new_item'		=> __( 'Add New News Article' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
+			),
+			'public'						=> true,
+			'has_archive'				=> false,
+		)
+	);
+
+	register_post_type( 'ahoy',
+		array(
+			'labels' => array(
+				'name'					=> __( 'Ahoy' ),
+				'singular_name'		=> __( 'Ahoy Article' ),
+				'description'			=> __( 'Ahoy Posts' ),
+				'add_new'				=> __( 'Add Ahoy Article' ),
+				'add_new_item'		=> __( 'Add New Ahoy Article' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
+			),
+			'public'						=> true,
+			'has_archive'				=> false,
+		)
+	);
+
+	register_post_type( 'faqs',
+		array(
+			'labels' => array(
+				'name'					=> __( 'FAQ\'s' ),
+				'singular_name'		=> __( 'FAQ' ),
+				'description'			=> __( 'List of Frequently Asked Questions for the About Page.' ),
+				'add_new'				=> __( 'Add FAQ' ),
+				'add_new_item'		=> __( 'Add New FAQ' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),

@@ -13,7 +13,13 @@ $(function() {
 
 	$('.question').on('click', function(e) {
 		e.preventDefault();
-		$(this).next('.answer').toggleClass('open');
+
+		if ($(this).next('.answer').hasClass('open')) {
+			$('.answer').removeClass('open');
+		} else {
+			$('.answer').removeClass('open');
+			$(this).next('.answer').addClass('open');
+		}
 
 	});
 

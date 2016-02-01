@@ -1,0 +1,45 @@
+.news-landing {
+
+	.container {
+
+		article {
+			border-bottom: 1px solid @purple;
+			padding-bottom: 25px;
+			margin-bottom: 30px;
+			position: relative;
+
+			.news-date {
+				font-size: 2.2rem;
+				font-family: @ht-light;
+			}
+
+			.news-summary {
+				font-size: 1.6rem;
+				font-family: @ht-bold;
+				margin-bottom: 15px;
+			}
+
+			.details-news {
+				width: 75%;
+			}
+
+			.btn {
+				position: absolute;
+				right: 0;
+				bottom: 25px;
+			}
+
+
+
+			&:last-child {
+				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+
+				.btn {
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
