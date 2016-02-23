@@ -715,18 +715,14 @@ section .container {
 }
 .featured-stories .container .featured-story {
   float: left;
-  width: 38%;
-  margin-left: 6%;
+  width: 42%;
+  margin-left: 5%;
   margin-bottom: 35px;
 }
 .featured-stories .container .featured-story:nth-child(even) {
   margin-left: 0;
-  margin-right: 6%;
+  margin-right: 5%;
   float: right;
-}
-.featured-stories .container .featured-story:last-child,
-.featured-stories .container .featured-story:nth-last-child(2) {
-  margin-bottom: 0;
 }
 .featured-stories .container .featured-story .img-container {
   width: 37%;

@@ -226,6 +226,10 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
+/**
+ * Hide the Admin Bar when user is logged in.
+ */
+add_filter('show_admin_bar', '__return_false');
 
 /**
  * Implement the Custom Header feature.

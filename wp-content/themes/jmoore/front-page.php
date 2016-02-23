@@ -46,39 +46,77 @@ get_header();?>
 <section class="featured-stories">
 	<div class="container">
 
-		<div class="featured-story">
+	<?php
+	query_posts(array(
+		'showposts' => -1,  // -1 brings all books, otherwise it will bring the value define in wp settings, default is 10.
+		'post_type' => array('post', 'books', 'news', 'ahoy'),
+	));
 
-			<div class="img-container">
-				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/featured-img-1.jpg" alt="">
-			</div> <!-- /.img-container -->
+	while(have_posts()) : the_post(); //start the loop to print book list
 
-			<div class="content-container">
-				<h2>Education Week at BYU</h2>
-				<hr class="purple-hr">
-				<p>August 18-21</p>
-				<p>I’m signing in the bookstore.</p>
-				<a href="#">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
-			</div> <!-- /.content-container -->
-
-		</div> <!-- /.column-1 -->
+		if(get_field('featured_post')):
+	?>
 
 		<div class="featured-story">
 
+		<?php if( 'news' == get_post_type() ): ?>
+
 			<div class="img-container">
-				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/featured-img-2.jpg" alt="">
-			</div> <!-- /.img-container -->
+			</div>
 
 			<div class="content-container">
-				<h2>Reserve your copy of Simply Anna</h2>
+				<h2>News: <?php the_title(); ?></h2>
 				<hr class="purple-hr">
-				<p>Simply Anna will be released on September 1st! Be sure to reserve you copy.</p>
-				<a href="#">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
-			</div> <!-- /.content-container -->
+				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
+			</div>
 
-		</div> <!-- /.column-2 -->
+			<?php
+			elseif('post' == get_post_type()):
+			?>
+
+			<div class="img-container">
+			</div>
+
+			<div class="content-container">
+				<h2>Blog: <?php the_title(); ?></h2>
+				<hr class="purple-hr">
+				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
+			</div>
+
+			<?php
+			elseif('ahoy' == get_post_type()):
+			?>
+
+			<div class="img-container">
+			</div>
+
+			<div class="content-container">
+				<h2>Ahoy: <?php the_title(); ?></h2>
+				<hr class="purple-hr">
+				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
+			</div>
+
+			<?php
+			elseif('books' == get_post_type()):
+			?>
+
+			<div class="img-container">
+			</div>
+
+			<div class="content-container">
+				<h2>Books: <?php the_title(); ?></h2>
+				<hr class="purple-hr">
+				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
+			</div>
+
+			<?php endif; ?>
+		</div> <!-- /.featured-story -->
+	 <?php endif; ?>
+
+	<?php endwhile; ?>
+	<?php wp_reset_postdata(); // reset the loop. ?>
 
 	</div> <!-- /.container -->
 </section> <!-- /.featured-stories -->
-
 
 <?php get_footer(); ?>
