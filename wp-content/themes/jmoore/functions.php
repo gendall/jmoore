@@ -148,7 +148,7 @@ function create_post_type() {
 		array(
 			'labels' => array(
 				'name'					=> __( 'Hero Carousel' ),
-				'singular_name'		=> __( 'slide' ),
+				'singular_name'		=> __( 'Slide' ),
 				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
 				'add_new'				=> __( 'Add Slide' ),
 				'add_new_item'		=> __( 'Add New Slide' ),

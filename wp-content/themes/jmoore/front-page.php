@@ -31,7 +31,7 @@ get_header();?>
 				<img src="<?php the_field('carousel_bg_image'); ?>" alt="Book Image">
 				<div class="slide-content <?php the_field('carousel_orientation'); ?>">
 					<h1><?php the_field('carousel_message') ?></h1>
-					<a class="btn pink-btn" href="<?php the_field('carousel_link_url'); ?>"><?php the_field('carousel_link_text'); ?> &raquo;</a>
+					<a class="btn pink-btn" href="<?php the_field('carousel_button_link'); ?>"><?php the_field('carousel_button_text'); ?> &raquo;</a>
 				</div>
 			</li>
 
