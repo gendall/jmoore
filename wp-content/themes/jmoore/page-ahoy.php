@@ -14,7 +14,9 @@ get_header(); ?>
 		while (have_posts()) : the_post();
 		?>
 		<article>
-			<h1 class="blog-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+			<h1 class="blog-title">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h1>
 			<div class="featured-media-container">
 				<?php the_post_video() ?>
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>

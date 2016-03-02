@@ -14,21 +14,32 @@ get_header(); ?>
 
 	<div class="full-article-container">
 
-		<section class="full-article">
+		<section class="full-blog-article generic-post">
 			<div class="container">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			
 				<article>
-					<div class="media-container">
-						<?php the_post_video() ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
-					</div> <!-- /.media-container -->
+
+				<?php if ( has_post_video() ): ?>
+
+					<div class="media-container-video media-container">
+
+						<?php the_post_video(); ?>
+
+					</div>
+				<?php elseif ( has_post_thumbnail() ): ?>
+					<div class="media-container-photo media-container">
+
+						<?php the_post_thumbnail(); ?>
+
+					</div>
+				<?php endif; ?>
 					
-					<div class="summary">
-						<h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-						<?php the_content(); ?>
-						<span class="theDate">by <?php the_author(); ?></span>
+					<div class="blog-content generic-post-content">
+						<h1><?php the_title(); ?></h1>
+						<div><?php the_content(); ?></div>
+						<span class="author">by <?php the_author(); ?></span>
 					</div> <!-- /.summary -->
 				</article>
 			

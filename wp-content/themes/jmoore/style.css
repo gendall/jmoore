@@ -285,9 +285,111 @@ section {
 }
 .container {
   width: 75%;
-  min-width: 900px;
+  min-width: 728px;
   margin: 0 auto;
   position: relative;
+}
+.generic-post .container {
+  padding: 40px;
+}
+.generic-post .container article:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.generic-post .container article .media-container-video {
+  border: 1px solid #E2B6D9;
+  padding: 15px 15px 11px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+.generic-post .container article .media-container-photo {
+  width: 30%;
+  float: left;
+}
+.generic-post .container article .media-container-photo img {
+  padding: 15px;
+  border: 1px solid #E2B6D9;
+}
+.generic-post .container article .media-container-photo + .generic-post-content {
+  width: 66%;
+  float: right;
+}
+.generic-post .container article .generic-post-content h1 {
+  font-size: 4.0rem;
+  line-height: 0.9;
+  color: #FD597F;
+  display: block;
+  border-bottom: 1px solid #E2B6D9;
+  overflow: visible;
+}
+.generic-post .container article .generic-post-content h1,
+.generic-post .container article .generic-post-content h2,
+.generic-post .container article .generic-post-content h3,
+.generic-post .container article .generic-post-content h4,
+.generic-post .container article .generic-post-content h5,
+.generic-post .container article .generic-post-content h6 {
+  margin-bottom: 35px;
+}
+.generic-post .container article .generic-post-content p + h1,
+.generic-post .container article .generic-post-content p + h2,
+.generic-post .container article .generic-post-content p + h3,
+.generic-post .container article .generic-post-content p + h4,
+.generic-post .container article .generic-post-content p + h5,
+.generic-post .container article .generic-post-content p + h6,
+.generic-post .container article .generic-post-content ol + h1,
+.generic-post .container article .generic-post-content ol + h2,
+.generic-post .container article .generic-post-content ol + h3,
+.generic-post .container article .generic-post-content ol + h4,
+.generic-post .container article .generic-post-content ol + h5,
+.generic-post .container article .generic-post-content ol + h6,
+.generic-post .container article .generic-post-content ul + h1,
+.generic-post .container article .generic-post-content ul + h2,
+.generic-post .container article .generic-post-content ul + h3,
+.generic-post .container article .generic-post-content ul + h4,
+.generic-post .container article .generic-post-content ul + h5,
+.generic-post .container article .generic-post-content ul + h6 {
+  padding-top: 20px;
+}
+.generic-post .container article .generic-post-content h2 {
+  font-size: 3.0rem;
+}
+.generic-post .container article .generic-post-content h3 {
+  font-size: 2.4rem;
+}
+.generic-post .container article .generic-post-content h4 {
+  font-size: 1.8rem;
+}
+.generic-post .container article .generic-post-content h5 {
+  font-size: 1.6rem;
+}
+.generic-post .container article .generic-post-content h6 {
+  font-size: 1.2rem;
+}
+.generic-post .container article .generic-post-content > div {
+  margin-bottom: 50px;
+}
+.generic-post .container article .generic-post-content > div p:last-child {
+  margin-bottom: 0;
+}
+.generic-post .container article .generic-post-content > div a {
+  color: #FD597F;
+}
+.generic-post .container article .generic-post-content > div a:hover {
+  text-decoration: underline;
+}
+.generic-post .container article .generic-post-content p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.generic-post .container article .generic-post-content .author {
+  font-size: 1.1rem;
+  font-style: italic;
+  float: right;
+  display: block;
 }
 /**************************************************************************************************
  *
@@ -567,7 +669,7 @@ header .row-two {
 ***************************************************************************************************/
 footer {
   width: 75%;
-  min-width: 900px;
+  min-width: 728px;
   background-color: #FD597F;
   margin: auto;
   padding-top: 8px;

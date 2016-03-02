@@ -14,21 +14,20 @@ get_header(); ?>
 
 	<div class="full-news-article-container">
 
-		<section class="full-news-article">
+		<section class="full-news-article generic-post">
 			<div class="container">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			
 				<article>
+
 					<div class="media-container">
 						<?php the_post_video() ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+						<?php the_post_thumbnail(); ?>
 					</div> <!-- /.media-container -->
 					
-					<div class="news-content">
-						<h1>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						</h1>
+					<div class="news-post-content generic-post-content">
+						<h1><?php the_title(); ?></h1>
 
 						<div>
 							<?php the_field('details-news'); ?>

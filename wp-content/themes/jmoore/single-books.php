@@ -14,25 +14,25 @@ get_header(); ?>
 
 	<div class="full-book-article-container">
 
-		<section class="full-book-article">
+		<section class="full-book-article generic-post">
 			<div class="container">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			
 				<article>
-					<div class="featured-media-container">
+
+					<div class="post-featured-media-container">
 						<?php the_post_video() ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+						<?php the_post_thumbnail(); ?>
 					</div> <!-- /.media-container -->
 					
-					<div class="book-content">
-						<h1>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						</h1>
+					<div class="book-post-content generic-post-content">
+						<h1><?php the_title(); ?></h1>
 
 						<div>
 							<?php the_field('book_description'); ?>
 						</div>
+
 						<span>by <?php the_author(); ?></span>
 					</div> <!-- /.summary -->
 				</article>

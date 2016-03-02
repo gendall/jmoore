@@ -118,6 +118,130 @@ section {
 }
 
 
+.generic-post {
+
+	.container {
+		padding: 40px;
+
+		article {
+
+			&:after { .clear; }
+
+			.media-container-video {
+				border: 1px solid @purple;
+				padding: 15px 15px 11px;
+				margin-bottom: 50px;
+				display: inline-block;
+			}
+
+			.media-container-photo {
+				width: 30%;
+				float: left;
+
+				img {
+					padding: 15px;
+					border: 1px solid @purple;
+				}
+			}
+
+			.media-container-photo + .generic-post-content {
+				width: 66%;
+				float: right;
+			}
+
+			.generic-post-content {
+
+				h1 {
+					font-size: 4.0rem;
+					line-height: 0.9;
+					color: @pink;
+					display: block;
+					border-bottom: 1px solid @purple;
+					overflow: visible;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					margin-bottom: 35px;
+				}
+
+				p + h1,
+				p + h2,
+				p + h3,
+				p + h4,
+				p + h5,
+				p + h6,
+				ol + h1,
+				ol + h2,
+				ol + h3,
+				ol + h4,
+				ol + h5,
+				ol + h6,
+				ul + h1,
+				ul + h2,
+				ul + h3,
+				ul + h4,
+				ul + h5,
+				ul + h6 {
+					padding-top: 20px;
+				}
+
+				h2 {
+					font-size: 3.0rem;
+				}
+
+				h3 {
+					font-size: 2.4rem;
+				}
+
+				h4 {
+					font-size: 1.8rem;
+				}
+
+				h5 {
+					font-size: 1.6rem;
+				}
+
+				h6 {
+					font-size: 1.2rem;
+				}
+
+				> div {
+					margin-bottom: 50px;
+
+					p:last-child { margin-bottom: 0; }
+
+					a {
+						color: @pink;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+
+				p {
+					font-size: 1.4rem;
+					line-height: 1.4;
+					margin-bottom: 15px;
+				}
+
+				.author {
+					font-size: 1.1rem;
+					font-style: italic;
+					float: right;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
 /**************************************************************************************************
  *
  *  @Section: Icons

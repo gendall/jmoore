@@ -14,21 +14,20 @@ get_header(); ?>
 
 	<div class="full-ahoy-article-container">
 
-		<section class="full-ahoy-article">
+		<section class="full-ahoy-article generic-post">
 			<div class="container">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			
 				<article>
+
 					<div class="media-container">
 						<?php the_post_video() ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+						<?php the_post_thumbnail(); ?>
 					</div> <!-- /.media-container -->
 					
-					<div class="ahoy-content">
-						<h1>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						</h1>
+					<div class="ahoy-post-content generic-post-content">
+						<h1><?php the_title(); ?></h1>
 
 						<div>
 							<?php the_content(); ?>
