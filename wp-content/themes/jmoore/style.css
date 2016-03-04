@@ -255,7 +255,7 @@ em {
   font-style: italic;
 }
 strong {
-  font-weight: 700;
+  font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
 }
 .main-content-wrapper {
   padding-top: 30px;
@@ -289,6 +289,11 @@ section {
   margin: 0 auto;
   position: relative;
 }
+/**************************************************************************************************
+ *
+ *  @Section: Generic Post/Default Styles
+ *
+***************************************************************************************************/
 .generic-post .container {
   padding: 40px;
 }
@@ -1161,11 +1166,23 @@ section .container {
 .short-stories-section {
   display: none;
 }
+/**************************************************************************************************
+ *
+ *  @Section: News/Events Landing Page Specific Styles
+ *
+***************************************************************************************************/
 .news-landing .container article {
   border-bottom: 1px solid #E2B6D9;
   padding-bottom: 25px;
   margin-bottom: 30px;
   position: relative;
+}
+.news-landing .container article:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
 }
 .news-landing .container article .news-date {
   font-size: 2.2rem;
@@ -1178,6 +1195,7 @@ section .container {
 }
 .news-landing .container article .details-news {
   width: 75%;
+  float: left;
 }
 .news-landing .container article .btn {
   position: absolute;
@@ -1191,4 +1209,25 @@ section .container {
 }
 .news-landing .container article:last-child .btn {
   bottom: 0;
+}
+/**************************************************************************************************
+ *
+ *  @Section: News/Events Full Article Page Specific Styles
+ *
+***************************************************************************************************/
+.full-news-article .container article .news-post-content .event-heading {
+  margin-bottom: 25px;
+}
+.full-news-article .container article .news-post-content .event-heading h1 {
+  margin-bottom: 5px;
+}
+.full-news-article .container article .news-post-content .event-heading h4 {
+  font-family: 'harriet_displaybold', 'harriet_displayregular', 'Times New Roman', Times, Serif;
+  margin-bottom: 0;
+}
+.full-news-article .container article .news-post-content .news-date {
+  margin-bottom: 0;
+}
+.full-news-article .container article .news-post-content .news-time {
+  margin-bottom: 25px;
 }

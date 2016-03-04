@@ -23,6 +23,14 @@ $(function() {
 
 	});
 
+	// Remove any empty <p> elements.
+	$('p').each(function() {
+		var $this = $(this);
+		if($this.html().replace(/\s|&nbsp;/g, '').length == 0) {
+			$this.remove();
+		}
+	});
+
 	var slider = $('.bxslider').bxSlider({
 		preloadImages: 'all',
 		auto: true,

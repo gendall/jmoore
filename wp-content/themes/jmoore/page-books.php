@@ -35,9 +35,8 @@ get_header(); ?>
 		<div class="container">
 
 			<?php
-			$Books = new WP_Query(array(
-				'showposts'   => -1,  // -1 brings all books, otherwise it will bring the value define in wp settings, default is 10.
-				'post_type'   => 'books'
+			$Books = new WP_Query( array(
+				'post_type' => 'books',
 			));
 
 			while($Books->have_posts()) : $Books->the_post(); //start the loop to print book list
@@ -53,12 +52,24 @@ get_header(); ?>
 				<div class="column-two">
 					<h4><?php the_title(); ?></h4>
 					<hr class="purple-hr">
-					<p><?php the_field('book_short_description'); ?></p>
+					<p><?php the_field('book_summary'); ?></p>
 					<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 				</div> <!-- /.column-two -->
 
 				<div class="column-three">
-					<a href="<?php the_field('book_amazon_url'); ?>">Amazon URL</a>
+					
+					<?php
+					if( have_rows('book_buy_now_links') ):
+
+						while( have_rows('book_buy_now_links') ): the_row();
+					?>
+							
+							<p><a href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
+					​
+					<?php
+						endwhile;
+					endif;
+					?>
 				</div> <!-- /.column-three -->
 			</div> <!-- .novel-summary -->
 
@@ -86,12 +97,24 @@ get_header(); ?>
 				<div class="column-two">
 					<h4><?php the_title(); ?></h4>
 					<hr class="purple-hr">
-					<p><?php the_field('book_short_description'); ?></p>
+					<p><?php the_field('book_summary'); ?></p>
 					<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 				</div> <!-- /.column-two -->
 
 				<div class="column-three">
-					<a href="<?php the_field('book_amazon_url'); ?>">Amazon URL</a>
+					
+					<?php
+					if( have_rows('book_buy_now_links') ):
+
+						while( have_rows('book_buy_now_links') ): the_row();
+					?>
+							
+							<p><a href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
+					​
+					<?php
+						endwhile;
+					endif;
+					?>
 				</div> <!-- /.column-three -->
 			</div> <!-- /.short-story-summary -->
 

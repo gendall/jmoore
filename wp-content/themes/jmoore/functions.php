@@ -7,6 +7,7 @@
 
 // Featured Images
 add_theme_support( 'post-thumbnails' );
+remove_filter('the_content', 'wpautop');
 
 // Control how long the blog post excerpt is on the blog page.
 add_filter('excerpt_length', 'my_excerpt_length');
