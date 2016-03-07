@@ -7,27 +7,33 @@
 
 get_header(); ?>  
 
-<section id="ahoyPosts" class="ahoy-landing">
+<section class="ahoy-landing">
 	<div class="container">
 		<?php
-		query_posts( array( 'category_name' => 'Ahoy Posts' ) );
-		while (have_posts()) : the_post();
+		$Ahoy = new WP_Query( array(
+			'post_type' => 'ahoy',
+		));
+
+		while($Ahoy->have_posts()) : $Ahoy->the_post(); //start the loop to print book list
 		?>
 		<article>
-			<h1 class="blog-title">
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-			</h1>
 			<div class="featured-media-container">
 				<?php the_post_video() ?>
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
-			</div>
-			<div class="summary">
-				<?php the_excerpt(); ?>
-				<span class="blog-author">author: <?php the_author(); ?></span>
-			</div>
+			</div> <!-- /.featured-media-container -->
+
+			<div class="content-container">
+				<h1 class="article-title">
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				</h1>
+				<div class="summary">
+					<?php the_excerpt(); ?>
+					<span class="article-author">author: <?php the_author(); ?></span>
+				</div> <!-- /.summary -->
+			</div> <!-- /.ahoy-content-container -->
 		</article>
 		<?php endwhile; ?>
-	</div>
+	</div> <!-- /.container -->
 </section> <!-- /#ahoyPosts -->
 
 <?php get_footer(); ?>

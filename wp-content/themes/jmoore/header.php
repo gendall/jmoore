@@ -32,6 +32,11 @@
       <div class="container">
 
         <h1 class="logo">
+          <?php
+          if( is_singular() ){
+            $p_type = get_post_type( $post->ID );
+          }
+          ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Jennifer Moore</a>
         </h1>
 

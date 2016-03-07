@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<section class="about-section">
+<section class="about-landing">
 	<div class="container">
 
 		<div class="sidebar">

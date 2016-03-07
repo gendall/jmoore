@@ -24,7 +24,7 @@ function custom_field_excerpt() {
 
 ?>
 
-<section id="newsPosts" class="news-landing">
+<section class="news-landing">
 	<div class="container">
 
 		<h1 class="main-page-title"><?php the_title(); ?></h1>
