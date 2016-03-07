@@ -57,15 +57,13 @@ get_header(); ?>
 				</div> <!-- /.column-two -->
 
 				<div class="column-three">
-					
+
 					<?php
 					if( have_rows('book_buy_now_links') ):
 
 						while( have_rows('book_buy_now_links') ): the_row();
 					?>
-							
-							<p><a href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
-					​
+					<p><a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
 					<?php
 						endwhile;
 					endif;
