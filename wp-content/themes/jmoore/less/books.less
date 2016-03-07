@@ -136,4 +136,70 @@
 ***************************************************************************************************/
 @media only screen and (max-width: @breakpoint) {
 
+	.tabs-section {
+
+		.container {
+
+			ul {
+
+				li {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	.novel-summary,
+	.short-story-summary {
+		width: 100%;
+		// border-bottom: 1px solid @purple;
+		// padding-bottom: 20px;
+		margin-bottom: 50px;
+
+		.column-one,
+		.column-two,
+		.column-three {
+			width: 100%;
+		}
+
+		.column-one {
+			margin-bottom: 25px;
+		}
+
+		.column-two {
+			border-right: 0;
+			margin-bottom: 15px;
+
+			p {
+				margin-bottom: 15px;
+			}
+		}
+
+		.column-three {
+			// text-align: center;
+
+			.btn-buynow-container {
+				display: inline-block;
+
+				a {
+
+					&:after {
+						content: "|";
+						display: inherit;
+						padding: 0 5px 0 7px;
+					}
+				}
+
+				&:last-child {
+
+					a {
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -425,6 +425,13 @@ i.icon-dbl-arrow-white {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 96%;
+    min-width: 0;
+    padding: 50px 20px;
+  }
+}
 /**
  * BxSlider v4.1.2 - Fully loaded, responsive content slider
  * http://bxslider.com
@@ -768,6 +775,12 @@ footer .content .footer-social-links li a.goodreads-link {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  footer {
+    width: 100%;
+    min-width: 0;
+  }
+}
 /**************************************************************************************************
  *
  *  @Section: Global Buttons & Global Link's Styles
@@ -900,6 +913,29 @@ section .container {
 }
 /**************************************************************************************************
  *
+ *  @Section: Mobile Styles
+ *
+***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .featured-stories .container .featured-story {
+    width: 96%;
+    float: none;
+    margin: auto;
+  }
+  .featured-stories .container .featured-story:nth-child(even),
+  .featured-stories .container .featured-story:nth-child(odd) {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .featured-stories .container .featured-story .img-container,
+  .featured-stories .container .featured-story .content-container {
+    width: 100%;
+    float: none;
+  }
+}
+/**************************************************************************************************
+ *
  *  @Section: About Page Specific Styles
  *
 ***************************************************************************************************/
@@ -966,6 +1002,24 @@ section .container {
 }
 .about-landing .container .main-content ul li .answer p:first-child {
   margin-top: 20px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Mobile Styles
+ *
+***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .about-landing .container {
+    padding: 35px 25px;
+  }
+  .about-landing .container .sidebar {
+    margin-bottom: 30px;
+  }
+  .about-landing .container .sidebar,
+  .about-landing .container .main-content {
+    width: 100%;
+    float: none;
+  }
 }
 /**************************************************************************************************
  *
@@ -1056,6 +1110,17 @@ section .container {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .blog-landing .container {
+    padding: 35px 25px;
+  }
+  .blog-landing .container article .featured-media-container {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
 /**************************************************************************************************
  *
  *  @Section: Books Page Styles
@@ -1179,6 +1244,51 @@ section .container {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .tabs-section .container ul li {
+    width: 50%;
+  }
+  .novel-summary,
+  .short-story-summary {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .novel-summary .column-one,
+  .short-story-summary .column-one,
+  .novel-summary .column-two,
+  .short-story-summary .column-two,
+  .novel-summary .column-three,
+  .short-story-summary .column-three {
+    width: 100%;
+  }
+  .novel-summary .column-one,
+  .short-story-summary .column-one {
+    margin-bottom: 25px;
+  }
+  .novel-summary .column-two,
+  .short-story-summary .column-two {
+    border-right: 0;
+    margin-bottom: 15px;
+  }
+  .novel-summary .column-two p,
+  .short-story-summary .column-two p {
+    margin-bottom: 15px;
+  }
+  .novel-summary .column-three .btn-buynow-container,
+  .short-story-summary .column-three .btn-buynow-container {
+    display: inline-block;
+  }
+  .novel-summary .column-three .btn-buynow-container a:after,
+  .short-story-summary .column-three .btn-buynow-container a:after {
+    content: "|";
+    display: inherit;
+    padding: 0 5px 0 7px;
+  }
+  .novel-summary .column-three .btn-buynow-container:last-child a:after,
+  .short-story-summary .column-three .btn-buynow-container:last-child a:after {
+    display: none;
+  }
+}
 /**************************************************************************************************
  *
  *  @Section: News/Events Landing Page Specific Styles
@@ -1261,6 +1371,16 @@ section .container {
 }
 .full-news-article .container article .news-post-content .news-time {
   margin-bottom: 25px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Mobile Styles
+ *
+***************************************************************************************************/
+@media only screen and (max-width: 767px) {
+  .news-landing .container article .details-news {
+    margin-bottom: 50px;
+  }
 }
 /**************************************************************************************************
  *
