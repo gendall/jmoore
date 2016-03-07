@@ -23,12 +23,12 @@ get_header(); ?>
 			</div> <!-- /.featured-media-container -->
 
 			<div class="content-container">
-				<h1 class="article-title">
+				<h1 class="title">
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h1>
 				<div class="summary">
 					<?php the_excerpt(); ?>
-					<span class="article-author">author: <?php the_author(); ?></span>
+					<span class="author">author: <?php the_author(); ?></span>
 				</div> <!-- /.summary -->
 			</div> <!-- /.ahoy-content-container -->
 		</article>

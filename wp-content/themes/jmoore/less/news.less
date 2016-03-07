@@ -6,16 +6,35 @@
 .news-landing {
 
 	.container {
+		padding: 50px 40px;
+		margin-bottom: 0;
 
 		article {
-			width: 90%;
-			margin: 0 auto 50px;
 			border-bottom: 1px solid @purple;
-			padding-bottom: 25px;
-			margin-bottom: 30px;
 			position: relative;
+			width: 100%;
+			margin: 0 auto 30px;
+			padding-bottom: 20px;
 
 			&:after { .clear; }
+
+			.featured-media-container {
+				width: 60%;
+				min-width: 640px;
+				max-height: 450px;
+				overflow: hidden;
+				margin-bottom: 15px;
+
+				a {
+					display: block;
+
+					img {}
+				}
+
+				iframe {
+					width: 100%;
+				}
+			}
 
 			.news-date {
 				font-size: 2.2rem;
@@ -98,14 +117,4 @@
 			}
 		}
 	}
-}
-
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
 }

@@ -268,7 +268,6 @@ strong {
   line-height: 0;
 }
 .main-page-title {
-  width: 90%;
   font-size: 4rem;
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   color: #FD597F;
@@ -807,6 +806,8 @@ section .container {
 }
 .carousel .container {
   background-color: #FFF8F6;
+  padding: 0;
+  margin: 0 auto;
 }
 .carousel .container .bxslider li {
   position: relative;
@@ -832,7 +833,8 @@ section .container {
   right: 45%;
 }
 .featured-stories .container {
-  padding-bottom: 90px;
+  padding: 0 0 60px;
+  margin: 0 auto;
 }
 .featured-stories .container:after {
   content: '';
@@ -903,6 +905,8 @@ section .container {
 ***************************************************************************************************/
 .about-landing .container {
   background: #FFF8F6;
+  padding: 50px 40px;
+  margin-bottom: 0;
 }
 .about-landing .container:after {
   content: '';
@@ -965,27 +969,26 @@ section .container {
 }
 /**************************************************************************************************
  *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-/**************************************************************************************************
- *
  *  @Section: Blog Page Specific Styles
  *
 ***************************************************************************************************/
+.blog-landing .container {
+  padding: 50px 40px;
+  margin-bottom: 0;
+}
 .blog-landing .container article {
-  width: 90%;
+  width: 100%;
   margin: 0 auto 50px;
 }
 .blog-landing .container article:last-child {
   margin: 0 auto;
 }
-.blog-landing .container article .article-title a {
+.blog-landing .container article .title a {
   font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.blog-landing .container article .article-title p {
+.blog-landing .container article .title p {
   margin-bottom: 10px;
 }
 .blog-landing .container article .featured-media-container {
@@ -1001,7 +1004,7 @@ section .container {
 .blog-landing .container article .featured-media-container iframe {
   width: 100%;
 }
-.blog-landing .container article .article-summary .article-author {
+.blog-landing .container article .summary .author {
   font-size: 1.2rem;
   font-style: italic;
   font-weight: 100;
@@ -1061,6 +1064,7 @@ section .container {
 .tabs-section .container {
   background-color: #FFF8F6;
   margin-bottom: 0;
+  padding: 0;
 }
 .tabs-section .container ul {
   margin: 0 7px;
@@ -1110,6 +1114,7 @@ section .container {
   background-color: #FFF8F6;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 0;
 }
 .novel-summary,
 .short-story-summary {
@@ -1179,13 +1184,16 @@ section .container {
  *  @Section: News/Events Landing Page Specific Styles
  *
 ***************************************************************************************************/
+.news-landing .container {
+  padding: 50px 40px;
+  margin-bottom: 0;
+}
 .news-landing .container article {
-  width: 90%;
-  margin: 0 auto 50px;
   border-bottom: 1px solid #E2B6D9;
-  padding-bottom: 25px;
-  margin-bottom: 30px;
   position: relative;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding-bottom: 20px;
 }
 .news-landing .container article:after {
   content: '';
@@ -1193,6 +1201,19 @@ section .container {
   clear: both;
   height: 0;
   line-height: 0;
+}
+.news-landing .container article .featured-media-container {
+  width: 60%;
+  min-width: 640px;
+  max-height: 450px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.news-landing .container article .featured-media-container a {
+  display: block;
+}
+.news-landing .container article .featured-media-container iframe {
+  width: 100%;
 }
 .news-landing .container article .news-date {
   font-size: 2.2rem;
@@ -1240,6 +1261,89 @@ section .container {
 }
 .full-news-article .container article .news-post-content .news-time {
   margin-bottom: 25px;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Blog Page Specific Styles
+ *
+***************************************************************************************************/
+.ahoy-landing .container {
+  margin-bottom: 0;
+}
+.ahoy-landing .container article {
+  width: 90%;
+  margin: 0 auto 50px;
+}
+.ahoy-landing .container article:last-child {
+  margin: 0 auto;
+}
+.ahoy-landing .container article .title a {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.ahoy-landing .container article .title p {
+  margin-bottom: 10px;
+}
+.ahoy-landing .container article .featured-media-container {
+  width: 60%;
+  min-width: 640px;
+  max-height: 450px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.ahoy-landing .container article .featured-media-container a {
+  display: block;
+}
+.ahoy-landing .container article .featured-media-container iframe {
+  width: 100%;
+}
+.ahoy-landing .container article .summary .author {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 100;
+}
+/**************************************************************************************************
+ *
+ *  @Section: Blog Page Specific Styles
+ *
+***************************************************************************************************/
+.default-text h1,
+.default-text h2,
+.default-text h3,
+.default-text h4,
+.default-text h5 {
+  margin-bottom: 20px;
+}
+.default-text h1 {
+  font-size: 2.4rem;
+}
+.default-text h2 {
+  font-size: 2rem;
+}
+.default-text h3 {
+  font-size: 1.6rem;
+}
+.default-text h4 {
+  font-size: 1.4rem;
+}
+.default-text h5 {
+  font-size: 1rem;
+}
+.default-text p,
+.default-text ul,
+.default-text ol {
+  margin-bottom: 10px;
+}
+.default-text ul,
+.default-text ol {
+  margin-left: 20px;
+}
+.default-text ul {
+  list-style: disc;
+}
+.default-text ol {
+  list-style: decimal;
 }
 /**************************************************************************************************
  *
