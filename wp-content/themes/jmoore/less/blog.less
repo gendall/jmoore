@@ -9,6 +9,10 @@
 		padding: 50px 40px;
 		margin-bottom: 0;
 
+		@media only screen and (max-width: @breakpoint) {
+			padding: 35px 25px;
+		}
+
 		article {
 			width: 100%;
 			margin: 0 auto 50px;
@@ -37,6 +41,13 @@
 				overflow: hidden;
 				margin-bottom: 15px;
 
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					height: auto;
+					max-width: 100%;
+					min-width: 0;
+				}
+
 				a {
 					display: block;
 
@@ -45,6 +56,11 @@
 
 				iframe {
 					width: 100%;
+
+					@media only screen and (max-width: @breakpoint) {
+						width: 100% !important;
+						height: auto !important;
+					}
 				}
 			}
 
@@ -102,18 +118,12 @@
 	.blog-landing {
 
 		.container {
-			padding: 35px 25px;
 
 			article {
 
 				.featured-media-container {
-					width: 100%;
-					height: auto;
-					max-width: 100%;
-					min-width: 0;
 				}
 			}
 		}
 	}
-
 }

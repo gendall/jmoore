@@ -134,7 +134,7 @@ section {
 	width: @default-width;
 	min-width: @default-min-width;
 	padding: 50px 0;
-	margin: 0 auto 25px;
+	margin: 0 auto;
 	position: relative;
 
 	&:after { .clear; }
@@ -157,6 +157,10 @@ section {
 	.container {
 		padding: 40px;
 
+		@media only screen and (max-width: @breakpoint) {
+			margin-bottom: 0;
+		}
+
 		article {
 
 			&:after { .clear; }
@@ -166,11 +170,29 @@ section {
 				padding: 15px 15px 11px;
 				margin-bottom: 50px;
 				display: inline-block;
+
+				@media only screen and (max-width: @breakpoint) {
+					margin-bottom: 20px;
+				}
+
+				iframe {
+
+					@media only screen and (max-width: @breakpoint) {
+						width: 100% !important;
+						height: auto !important;
+					}
+				}
 			}
 
 			.media-container-photo {
 				width: 30%;
 				float: left;
+
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					float: none;
+					margin-bottom: 20px;
+				}
 
 				img {
 					padding: 15px;
@@ -181,6 +203,11 @@ section {
 			.media-container-photo + .generic-post-content {
 				width: 66%;
 				float: right;
+
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					float: none;
+				}
 			}
 
 			.generic-post-content {
@@ -192,6 +219,10 @@ section {
 					display: block;
 					border-bottom: 1px solid @purple;
 					overflow: visible;
+
+					@media only screen and (max-width: @breakpoint) {
+						font-size: 3.0rem;
+					}
 				}
 
 				h1,
@@ -200,7 +231,7 @@ section {
 				h4,
 				h5,
 				h6 {
-					margin-bottom: 35px;
+					margin-bottom: 25px;
 				}
 
 				p + h1,
@@ -221,15 +252,15 @@ section {
 				ul + h4,
 				ul + h5,
 				ul + h6 {
-					padding-top: 20px;
+					// padding-top: 20px;
 				}
 
 				h2 {
-					font-size: 3.0rem;
+					font-size: 2.4rem;
 				}
 
 				h3 {
-					font-size: 2.4rem;
+					font-size: 2.0rem;
 				}
 
 				h4 {
@@ -242,6 +273,12 @@ section {
 
 				h6 {
 					font-size: 1.2rem;
+				}
+
+				ol,
+				ul,
+				p {
+					margin-bottom: 15px;
 				}
 
 				> div {
@@ -267,7 +304,6 @@ section {
 				p {
 					font-size: 1.4rem;
 					line-height: 1.4;
-					margin-bottom: 15px;
 				}
 
 				.author {
