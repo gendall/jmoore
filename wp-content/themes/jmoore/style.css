@@ -48,6 +48,170 @@
  *  @Section: Imports
  *
 ***************************************************************************************************/
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 70px;
+  *zoom: 1;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+/** THEME
+===================================*/
+.bx-wrapper .bx-viewport {
+  border: 7px solid #FFF8F6;
+  background: #FFFFFF;
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+  -ms-transform: translatez(0);
+  transform: translatez(0);
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  left: 7px;
+  bottom: 52px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url(img/bx_loader.gif) center center no-repeat #fff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666666;
+  border-bottom: 1px solid #E2B6D9;
+  padding-bottom: 2px;
+  width: calc(100% - 14px);
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #e8d9fb;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #fd597f;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url(img/controls.png) no-repeat 0 -32px;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url(img/controls.png) no-repeat -43px -32px;
+}
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next:hover {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666\9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
 /**************************************************************************************************
  *
  *  @Section: Reset Default Browser Styles
@@ -416,8 +580,10 @@ section {
 .generic-post .container article .generic-post-content > div a {
   color: #FD597F;
 }
-.generic-post .container article .generic-post-content > div a:hover {
-  text-decoration: underline;
+@media only screen and (min-width: 767px) {
+  .generic-post .container article .generic-post-content > div a:hover {
+    text-decoration: underline;
+  }
 }
 .generic-post .container article .generic-post-content p {
   font-size: 1.4rem;
@@ -454,169 +620,11 @@ i.icon-dbl-arrow-white {
   height: 9px;
   font-size: 2.0rem;
 }
-/**
- * BxSlider v4.1.2 - Fully loaded, responsive content slider
- * http://bxslider.com
- *
- * Written by: Steven Wanderski, 2014
- * http://stevenwanderski.com
- * (while drinking Belgian ales and listening to jazz)
- *
- * CEO and founder of bxCreative, LTD
- * http://bxcreative.com
- */
-/** RESET AND LAYOUT
-===================================*/
-.bx-wrapper {
-  position: relative;
-  margin: 0 auto;
-  padding: 0 0 70px;
-  *zoom: 1;
-}
-.bx-wrapper img {
-  max-width: 100%;
-  display: block;
-}
-/** THEME
-===================================*/
-.bx-wrapper .bx-viewport {
-  border: 7px solid #FFF8F6;
-  background: #FFFFFF;
-  /*fix other elements on the page moving (on Chrome)*/
-  -webkit-transform: translatez(0);
-  -ms-transform: translatez(0);
-  transform: translatez(0);
-}
-.bx-wrapper .bx-pager,
-.bx-wrapper .bx-controls-auto {
-  position: absolute;
-  left: 7px;
-  bottom: 52px;
-  width: 100%;
-}
-/* LOADER */
-.bx-wrapper .bx-loading {
-  min-height: 50px;
-  background: url(img/bx_loader.gif) center center no-repeat #fff;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2000;
-}
-/* PAGER */
-.bx-wrapper .bx-pager {
-  text-align: center;
-  font-size: .85em;
-  font-family: Arial;
-  font-weight: bold;
-  color: #666666;
-  border-bottom: 1px solid #E2B6D9;
-  padding-bottom: 2px;
-  width: calc(100% - 14px);
-}
-.bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-  display: inline-block;
-  *zoom: 1;
-  *display: inline;
-}
-.bx-wrapper .bx-pager.bx-default-pager a {
-  background: #e8d9fb;
-  text-indent: -9999px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  outline: 0;
-}
-.bx-wrapper .bx-pager.bx-default-pager a:hover,
-.bx-wrapper .bx-pager.bx-default-pager a.active {
-  background: #fd597f;
-}
-/* DIRECTION CONTROLS (NEXT / PREV) */
-.bx-wrapper .bx-prev {
-  left: 10px;
-  background: url(img/controls.png) no-repeat 0 -32px;
-}
-.bx-wrapper .bx-next {
-  right: 10px;
-  background: url(img/controls.png) no-repeat -43px -32px;
-}
-.bx-wrapper .bx-prev:hover {
+i.icon-faq-arrow {
+  background-image: url(img/icon-faq-arrow-sprite.png);
   background-position: 0 0;
-}
-.bx-wrapper .bx-next:hover {
-  background-position: -43px 0;
-}
-.bx-wrapper .bx-controls-direction a {
-  position: absolute;
-  top: 50%;
-  margin-top: -16px;
-  outline: 0;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
-  z-index: 9999;
-}
-.bx-wrapper .bx-controls-direction a.disabled {
-  display: none;
-}
-/* AUTO CONTROLS (START / STOP) */
-.bx-wrapper .bx-controls-auto {
-  text-align: center;
-}
-.bx-wrapper .bx-controls-auto .bx-start {
-  display: block;
-  text-indent: -9999px;
-  width: 10px;
-  height: 11px;
-  outline: 0;
-  background: url(img/controls.png) -86px -11px no-repeat;
-  margin: 0 3px;
-}
-.bx-wrapper .bx-controls-auto .bx-start:hover,
-.bx-wrapper .bx-controls-auto .bx-start.active {
-  background-position: -86px 0;
-}
-.bx-wrapper .bx-controls-auto .bx-stop {
-  display: block;
-  text-indent: -9999px;
-  width: 9px;
-  height: 11px;
-  outline: 0;
-  background: url(img/controls.png) -86px -44px no-repeat;
-  margin: 0 3px;
-}
-.bx-wrapper .bx-controls-auto .bx-stop:hover,
-.bx-wrapper .bx-controls-auto .bx-stop.active {
-  background-position: -86px -33px;
-}
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-  text-align: left;
-  width: 80%;
-}
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-  right: 0;
-  width: 35px;
-}
-/* IMAGE CAPTIONS */
-.bx-wrapper .bx-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #666\9;
-  background: rgba(80, 80, 80, 0.75);
-  width: 100%;
-}
-.bx-wrapper .bx-caption span {
-  color: #fff;
-  font-family: Arial;
-  display: block;
-  font-size: .85em;
-  padding: 10px;
+  width: 17px;
+  height: 9px;
 }
 /**************************************************************************************************
  *
@@ -713,20 +721,16 @@ header .row-two {
     width: 100%;
     display: block;
     margin-left: 0;
-    border-bottom: 1px solid #E2B6D9;
+    border-top: 1px solid #E2B6D9;
   }
 }
 .nav li:first-child {
   margin-left: 0;
 }
 @media only screen and (max-width: 767px) {
-  .nav li:first-child {
-    border-top: 1px solid #E2B6D9;
+  .nav li:last-child {
+    border-bottom: 1px solid #E2B6D9;
   }
-}
-.nav li.current {
-  border-bottom: 2px solid #FD597F;
-  margin-bottom: -2px;
 }
 .nav li a {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
@@ -758,7 +762,14 @@ header .row-two {
   }
 }
 @media only screen and (max-width: 767px) {
+  .nav li.current-menu-item {
+    border-top: 1px solid #FD597F;
+  }
+  .nav li.current-menu-item + li {
+    border-top: 1px solid #FD597F;
+  }
   .nav li.current-menu-item a {
+    background-color: #FFF8F6;
     font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
   }
 }
@@ -774,6 +785,7 @@ header .row-two {
  *
 ***************************************************************************************************/
 .toggle-mobile-nav {
+  display: none;
   cursor: pointer;
   position: absolute;
   right: 5%;
@@ -781,6 +793,11 @@ header .row-two {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+@media only screen and (max-width: 767px) {
+  .toggle-mobile-nav {
+    display: block;
+  }
 }
 .toggle-mobile-nav span {
   background-color: #FD597F;
@@ -964,6 +981,7 @@ section .container {
 @media only screen and (max-width: 767px) {
   .featured-stories .container {
     padding: 0;
+    overflow: hidden;
   }
 }
 .featured-stories .container:after {
@@ -1070,6 +1088,11 @@ section .container {
   padding: 50px 40px;
   margin-bottom: 0;
 }
+@media only screen and (max-width: 767px) {
+  .about-landing .container {
+    padding: 35px 25px;
+  }
+}
 .about-landing .container:after {
   content: '';
   display: block;
@@ -1081,6 +1104,13 @@ section .container {
   float: left;
   width: 30%;
 }
+@media only screen and (max-width: 767px) {
+  .about-landing .container .sidebar {
+    margin-bottom: 30px;
+    width: 100%;
+    float: none;
+  }
+}
 .about-landing .container .sidebar img.headshot {
   border: 1px solid #FD597F;
   padding: 5px;
@@ -1088,6 +1118,12 @@ section .container {
 .about-landing .container .main-content {
   float: right;
   width: 65%;
+}
+@media only screen and (max-width: 767px) {
+  .about-landing .container .main-content {
+    width: 100%;
+    float: none;
+  }
 }
 .about-landing .container .main-content h1 {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
@@ -1106,46 +1142,51 @@ section .container {
 .about-landing .container .main-content p {
   margin-bottom: 20px;
 }
-.about-landing .container .main-content ul li {
+.about-landing .container .main-content ul.faqs li {
   padding: 10px 0;
   border-bottom: 1px solid #E2B6D9;
 }
-.about-landing .container .main-content ul li:first-child {
+.about-landing .container .main-content ul.faqs li:first-child {
   border-top: 1px solid #E2B6D9;
 }
-.about-landing .container .main-content ul li h5 {
+.about-landing .container .main-content ul.faqs li h5 {
   font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
   font-size: 1.6rem;
   cursor: pointer;
+  position: relative;
 }
-.about-landing .container .main-content ul li .answer {
+.about-landing .container .main-content ul.faqs li h5:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.about-landing .container .main-content ul.faqs li h5 .icon-faq-arrow {
+  margin-left: 0;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.about-landing .container .main-content ul.faqs li h5.open .icon-faq-arrow {
+  background-position: 0 -28px;
+}
+.about-landing .container .main-content ul.faqs li .answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.8s ease-in-out;
 }
-.about-landing .container .main-content ul li .answer.open {
+.about-landing .container .main-content ul.faqs li .answer.open {
   max-height: 800px;
 }
-.about-landing .container .main-content ul li .answer p:first-child {
-  margin-top: 20px;
+.about-landing .container .main-content ul.faqs li .answer > *:first-child {
+  margin-top: 25px;
 }
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: 767px) {
-  .about-landing .container {
-    padding: 35px 25px;
-  }
-  .about-landing .container .sidebar {
-    margin-bottom: 30px;
-  }
-  .about-landing .container .sidebar,
-  .about-landing .container .main-content {
-    width: 100%;
-    float: none;
-  }
+.about-landing .container .main-content ul.faqs li .answer > *:last-child {
+  margin-bottom: 15px;
 }
 /**************************************************************************************************
  *
@@ -1348,7 +1389,8 @@ section .container {
 }
 .novel-summary .column-two p,
 .short-story-summary .column-two p {
-  margin-bottom: 30px;
+  height: 55px;
+  margin-bottom: 25px;
 }
 .novel-summary .column-two a i.icon-dbl-arrow-pink,
 .short-story-summary .column-two a i.icon-dbl-arrow-pink {
@@ -1463,6 +1505,12 @@ section .container {
 .news-landing .container article .details-news {
   width: 75%;
   float: left;
+}
+.news-landing .container article .details-news span {
+  font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
+}
+.news-landing .container article .details-news > p {
+  display: inline;
 }
 .news-landing .container article .btn {
   position: absolute;

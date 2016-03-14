@@ -25,18 +25,18 @@ get_header(); ?>
 			the_content();
 
 			$faqs = new WP_Query(array(
-				'showposts'   => -1,  // -1 brings all books, otherwise it will bring the value define in wp settings, default is 10.
+				'showposts'   => -1,
 				'post_type'   => 'faqs'
 			));
 
 			?>
 
-			<ul>
+			<ul class="faqs">
 				<?php
-				while($faqs->have_posts()) : $faqs->the_post(); //start the loop to print book list
+				while($faqs->have_posts()) : $faqs->the_post(); // Start the loop to print faq list.
 				?>
 				<li>
-					<h5 class="question"><?php the_title(); ?></h5>
+					<h5 class="question"><?php the_title(); ?><i class="icon-faq-arrow"></i></h5>
 					<div class="answer"><?php the_content(); ?></div>
 				</li>
 				<?php endwhile; ?>

@@ -47,15 +47,23 @@ function custom_field_excerpt() {
 		<article>
 			<h2 class="news-date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_field('news_event_date'); ?></a></h2>
 			<hr class="purple-hr">
+
 			<p class="news-summary">
 				<span class="news-title"><?php the_title(); ?></span> &nbsp;|&nbsp;
 				<span><?php the_field('news_event_time'); ?></span> &nbsp;|&nbsp;
 				<span><?php the_field('news_event_location'); ?></span>
 			</p>
+
 			<div class="details-news">
-				<?php if(the_field('news_event_venue')): the_field('news_event_venue'); endif; ?> - 
-				<?php echo custom_field_excerpt(); ?>
-			</div>
+				<?php if(get_field('news_event_venue')): ?>
+				<span><?php the_field('news_event_venue'); ?> - </span>
+
+				<?php
+				endif;
+				echo custom_field_excerpt();
+				?>
+			</div> <!-- /.details-news -->
+
 			<a class="btn pink-btn" href="<?php echo esc_url( get_permalink() );?>">View Details &raquo;</a>
 		</article>
 		<?php endwhile; ?>

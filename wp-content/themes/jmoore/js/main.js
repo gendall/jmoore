@@ -22,10 +22,10 @@ $(function() {
 		e.preventDefault();
 
 		if ($(this).next('.answer').hasClass('open')) {
-			$('.answer').removeClass('open');
+			$('.question, .answer').removeClass('open');
 		} else {
-			$('.answer').removeClass('open');
-			$(this).next('.answer').addClass('open');
+			$('.question, .answer').removeClass('open');
+			$(this).addClass('open').next('.answer').addClass('open');
 		}
 
 	});

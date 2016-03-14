@@ -247,13 +247,19 @@ section {
 				> div {
 					margin-bottom: 50px;
 
-					p:last-child { margin-bottom: 0; }
+					p:last-child {
+						margin-bottom: 0;
+					}
 
 					a {
 						color: @pink;
 
-						&:hover {
-							text-decoration: underline;
+						// No hover states on devices smaller than 767px (Mobile Devices)
+						@media only screen and (min-width: @breakpoint) {
+
+							&:hover {
+								text-decoration: underline;
+							}
 						}
 					}
 				}
@@ -301,8 +307,12 @@ i {
 		height: 9px;
 		font-size: 2.0rem;
 	}
+
+	&.icon-faq-arrow {
+		background-image: url(img/icon-faq-arrow-sprite.png);
+		background-position: 0 0;
+		width: 17px;
+		height: 9px;
+	}
 }
-
-
-
 

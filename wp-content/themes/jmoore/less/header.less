@@ -98,20 +98,18 @@ header {
 			width: 100%;
 			display: block;
 			margin-left: 0;
-			border-bottom: 1px solid @purple;
+			border-top: 1px solid @purple;
 		}
 
 		&:first-child {
 			margin-left: 0;
-
-			@media only screen and (max-width: @breakpoint) {
-				border-top: 1px solid @purple;
-			}
 		}
 
-		&.current {
-			border-bottom: 2px solid @pink;
-			margin-bottom: -2px;
+		&:last-child {
+
+			@media only screen and (max-width: @breakpoint) {
+				border-bottom: 1px solid @purple;
+			}
 		}
 
 		a {
@@ -150,8 +148,17 @@ header {
 
 		@media only screen and (max-width: @breakpoint) {
 
-			&.current-menu-item a {
-				font-family: @ht-bold;
+			&.current-menu-item {
+				border-top: 1px solid @pink;
+
+				& + li {
+					border-top: 1px solid @pink;
+				}
+				
+				a {
+					background-color: @off-white;
+					font-family: @ht-bold;
+				}
 			}
 		}
 
@@ -172,6 +179,7 @@ header {
  *
 ***************************************************************************************************/
 .toggle-mobile-nav {
+	display: none;
 	cursor: pointer;
 	position: absolute;
 	right: 5%;
@@ -179,6 +187,10 @@ header {
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+
+	@media only screen and (max-width: @breakpoint) {
+		display: block;
+	}
 
 	span {
 		background-color: @pink;

@@ -10,11 +10,21 @@
 		padding: 50px 40px;
 		margin-bottom: 0;
 
+		@media only screen and (max-width: @breakpoint) {
+			padding: 35px 25px;
+		}
+
 		&:after { .clear; }
 
 		.sidebar {
 			float: left;
 			width: 30%;
+
+			@media only screen and (max-width: @breakpoint) {
+				margin-bottom: 30px;
+				width: 100%;
+				float: none;
+			}
 
 			img {
 
@@ -28,6 +38,11 @@
 		.main-content {
 			float: right;
 			width: 65%;
+
+			@media only screen and (max-width: @breakpoint) {
+				width: 100%;
+				float: none;
+			}
 
 			h1 {
 				font-family: @hd-thin;
@@ -50,7 +65,7 @@
 				margin-bottom: 20px;
 			}
 
-			ul {
+			ul.faqs {
 
 				li {
 					padding: 10px 0;
@@ -64,6 +79,24 @@
 						font-family: @ht-bold;
 						font-size: 1.6rem;
 						cursor: pointer;
+						position: relative;
+
+						&:after { .clear; }
+
+						.icon-faq-arrow {
+							margin-left: 0;
+							position: absolute;
+							top: 50%;
+							right: 8px;
+							.centered-vertically(-50%);
+						}
+
+						&.open {
+
+							.icon-faq-arrow {
+								background-position: 0 -28px;
+							}
+						}
 					}
 
 					.answer {
@@ -75,11 +108,12 @@
 							max-height: 800px;
 						}
 
-						p {
+						> *:first-child {
+							margin-top: 25px;
+						}
 
-							&:first-child {
-								margin-top: 20px;
-							}
+						> *:last-child {
+							margin-bottom: 15px;
 						}
 					}
 				}
@@ -88,28 +122,3 @@
 	}
 }
 
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
-	.about-landing {
-
-		.container {
-			padding: 35px 25px;
-
-			.sidebar {
-				margin-bottom: 30px;
-			}
-
-			.sidebar,
-			.main-content  {
-				width: 100%;
-				float: none;
-			}
-		}
-	}
-}

@@ -7,7 +7,7 @@
 
 // Featured Images
 add_theme_support( 'post-thumbnails' );
-remove_filter('the_content', 'wpautop');
+// remove_filter('the_content', 'wpautop');
 
 // Control how long the blog post excerpt is on the blog page.
 add_filter('excerpt_length', 'my_excerpt_length');
@@ -180,7 +180,7 @@ function create_post_type() {
 	register_post_type( 'news',
 		array(
 			'labels' => array(
-				'name'					=> __( 'News' ),
+				'name'					=> __( 'News/Events' ),
 				'singular_name'		=> __( 'News Article' ),
 				'description'			=> __( 'List of Events and News' ),
 				'add_new'				=> __( 'Add News Article' ),

@@ -44,6 +44,7 @@
 @default-min-width:	728px; // At the smallest width, for desktop, this will provide a little padding on the sides.
 
 @breakpoint:			767px;
+
 @tablet-landscape:	1024px;
 @tablet-portrait:		768px;
 @mobile:				320px;
@@ -141,13 +142,14 @@
  *  @Section: Imports
  *
 ***************************************************************************************************/
-@import "reset";
-@import "global";
-
 // JQuery Plugin Built-in Styles
 @import "libs/bxslider";
 
-// Global elements
+// Global
+@import "reset";
+@import "global";
+
+// Global Elements
 @import "header";
 @import "footer";
 @import "buttons";
