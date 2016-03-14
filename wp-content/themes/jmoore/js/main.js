@@ -1,5 +1,12 @@
 $(function() {
 
+	// Open/Close the Mobile Navigation.
+	$('.toggle-mobile-nav, .overlay').click( function() {
+		$('body').toggleClass('no-overflow');
+		$(this).add('.nav').toggleClass('open');
+		$('.overlay').fadeToggle('fast');
+	});
+
 	// Show/HIde the novel and short story sections
 	$('.book-tab').on('click', function(e) {
 		var tabId = $(this).attr('id');

@@ -4,8 +4,10 @@
  *
 ***************************************************************************************************/
 header {
+	position: relative;
 	background: @white;
 	padding-bottom: 5px;
+	z-index: 11;
 
 	&:after { .clear; }
 
@@ -19,12 +21,24 @@ header {
 	}
 
 	.row-one {
+		@media only screen and (max-width: @breakpoint) {
+			padding-top: 20px;
+		}
 
 		.container {
 			padding-top: 60px;
 
+			@media only screen and (max-width: @breakpoint) {
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
 			.logo {
 				line-height: 0.8;
+
+				@media only screen and (max-width: @breakpoint) {
+					float: left;
+				}
 
 				a {
 					font-family: @hd-thin;
@@ -40,6 +54,13 @@ header {
 		border-top: 1px solid @purple;
 		border-bottom: 1px solid @purple;
 		margin: 0 0 5px;
+
+		.container {
+
+			@media only screen and (max-width: @breakpoint) {
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -52,12 +73,40 @@ header {
 .nav {
 	text-align: right;
 
+	@media only screen and (max-width: @breakpoint) {
+		background-color: @white;
+		text-align: left;
+		position: absolute;
+		top: -1px;
+		left: 0;
+		right: 0;
+		max-height: 0;
+		overflow: hidden;
+		.transition(0.4s, max-height, ease-in);
+
+		&.open {
+			display: block;
+			max-height: 800px;
+		}
+	}
+
 	li {
 		display: inline-block;
 		margin-left: 10px;
 
+		@media only screen and (max-width: @breakpoint) {
+			width: 100%;
+			display: block;
+			margin-left: 0;
+			border-bottom: 1px solid @purple;
+		}
+
 		&:first-child {
 			margin-left: 0;
+
+			@media only screen and (max-width: @breakpoint) {
+				border-top: 1px solid @purple;
+			}
 		}
 
 		&.current {
@@ -72,6 +121,10 @@ header {
 			position: relative;
 			display: block;
 
+			@media only screen and (max-width: @breakpoint) {
+				padding: 15px 15% 14px;
+			}
+
 			&:after {
 				background-color: @pink;
 				height: 2px;
@@ -84,18 +137,30 @@ header {
 				.transition();
 			}
 
-			&:hover {
+			@media only screen and (min-width: @breakpoint) {
+				&:hover {
 
-				&:after {
-					bottom: -2px;
-					opacity: 1;
+					&:after {
+						bottom: -2px;
+						opacity: 1;
+					}
 				}
 			}
 		}
 
-		&.current-menu-item a:after {
-			bottom: -2px;
-			opacity: 1;
+		@media only screen and (max-width: @breakpoint) {
+
+			&.current-menu-item a {
+				font-family: @ht-bold;
+			}
+		}
+
+		@media only screen and (min-width: @breakpoint) {
+
+			&.current-menu-item a:after {
+				bottom: -2px;
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -106,6 +171,41 @@ header {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
+.toggle-mobile-nav {
+	cursor: pointer;
+	position: absolute;
+	right: 5%;
+	top: 56%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 
+	span {
+		background-color: @pink;
+		display: block;
+		width: 26px;
+		height: 2px;
+		margin-top: 6px;
+		.transition();
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.open span {
+
+		&:first-child {
+			.transform(rotate(45deg) translate3d(5px, 6px, 0));
+		}
+
+		&:nth-child(2) {
+			opacity: 0;
+		}
+
+		&:last-child {
+			.transform(rotate(-45deg) translate3d(6px, -6px, 0));
+		}
+	}
 }
+

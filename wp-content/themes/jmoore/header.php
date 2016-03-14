@@ -10,48 +10,54 @@
 <html <?php language_attributes(); ?>>
 <head>
 
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta http-equiv="Content-Type" content="text/html; <?php bloginfo( 'charset' ); ?>" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="Content-Type" content="text/html; <?php bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <?php wp_head(); ?>
+	<?php wp_head(); ?>
 
-  <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png">
-  <link type="img/png" rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png">
+	<link type="img/png" rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
 
 </head>
 <body <?php body_class(); ?>>
-  <!--[if lt IE 9]>
-    <p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+	<!--[if lt IE 9]>
+		<p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
 
-  <header>
+	<header>
 
-    <div class="row-one row">
-      <div class="container">
+		<div class="row-one row">
+			<div class="container">
 
-        <h1 class="logo">
-          <?php
-          if( is_singular() ){
-            $p_type = get_post_type( $post->ID );
-          }
-          ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Jennifer Moore</a>
-        </h1>
+				<h1 class="logo">
+					<?php
+					if( is_singular() ){
+						$p_type = get_post_type( $post->ID );
+					}
+					?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Jennifer Moore</a>
+				</h1>
 
-      </div> <!-- /.container -->
-    </div> <!-- /.row-one -->
+				<div class="toggle-mobile-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div> <!-- /.toggle-mobile-nav -->
 
-    <div class="row-two row">
-      <div class="container">
+			</div> <!-- /.container -->
+		</div> <!-- /.row-one -->
 
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
+		<div class="row-two row">
+			<div class="container">
 
-      </div> <!-- /.container -->
-    </div> <!-- /.row-two -->
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
 
-  </header>
+			</div> <!-- /.container -->
+		</div> <!-- /.row-two -->
 
-  <div class="main-content-wrapper">
+	</header>
+
+	<div class="main-content-wrapper">
 

@@ -10,6 +10,11 @@ footer {
 	margin: auto;
 	padding-top: 8px;
 
+	@media only screen and (max-width: @breakpoint) {
+		width: 100%;
+		min-width: 0;
+	}
+
 	.content {
 		width: 100%;
 		background-color: transparent;
@@ -87,16 +92,3 @@ footer {
 	}
 }
 
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
-	footer {
-		width: 100%;
-		min-width: 0;
-	}
-}

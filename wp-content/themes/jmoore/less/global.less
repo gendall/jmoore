@@ -21,6 +21,14 @@ body {
 	background-repeat: no-repeat;
 	background-position: center 123px;
 	// background-size: 100% auto;
+
+	&.no-overflow {
+		overflow: hidden;
+	}
+
+	@media only screen and (max-width: @breakpoint) {
+		background-position: center 106px;
+	}
 }
 
 .browser-upgrade {
@@ -85,6 +93,19 @@ strong {
 	font-family: @ht-medium;
 }
 
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	display: none;
+	z-index: 10;
+}
+
 .main-content-wrapper {
 	padding-top: 30px;
 
@@ -115,6 +136,14 @@ section {
 	padding: 50px 0;
 	margin: 0 auto 25px;
 	position: relative;
+
+	&:after { .clear; }
+
+	@media only screen and (max-width: @breakpoint) {
+		width: 94%;
+		min-width: 0;
+		padding: 50px 20px;
+	}
 }
 
 
@@ -272,22 +301,6 @@ i {
 		height: 9px;
 		font-size: 2.0rem;
 	}
-}
-
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
-	.container {
-		width: 96%;
-		min-width: 0;
-		padding: 50px 20px;
-	}
-
 }
 
 

@@ -119,6 +119,22 @@
 	transition: @property @duration @ease;
 }
 
+.transition-delay(@d: 0.4s) {
+	-webkit-transition-delay: @d;
+	-moz-transition-delay: @d;
+	-ms-transition-delay: @d;
+	-o-transition-delay: @d;
+	transition-delay: @d;
+}
+
+.transform(@arguments) {
+	-webkit-transform: @arguments;
+	-moz-transform: @arguments;
+	-o-transform: @arguments;
+	-ms-transform: @arguments;
+	transform: @arguments;
+}
+
 
 /**************************************************************************************************
  *

@@ -56,6 +56,10 @@ section {
 		padding: 0 0 60px;
 		margin: 0 auto;
 
+		@media only screen and (max-width: @breakpoint) {
+			padding: 0;
+		}
+
 		&:after { .clear; }
 
 		.featured-story {
@@ -64,10 +68,21 @@ section {
 			margin-left: 5%;
 			margin-bottom: 35px;
 
+			@media only screen and (max-width: @breakpoint) {
+				width: 80%;
+				float: none;
+				margin: 0 auto 60px;
+			}
+
 			&:nth-child(even) {
 				margin-left: 0;
 				margin-right: 5%;
 				float: right;
+
+				@media only screen and (max-width: @breakpoint) {
+					float: none;
+					margin: 0 auto 60px;
+				}
 			}
 
 			// &:last-child,
@@ -81,6 +96,13 @@ section {
 				border: 1px solid @pink;
 				position: relative;
 				overflow: hidden;
+
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					padding-bottom: 100%;
+					float: none;
+					margin-bottom: 20px;
+				}
 
 				&:before {
 					content: " ";
@@ -106,6 +128,11 @@ section {
 			.content-container {
 				width: 60%;
 				float: right;
+
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					float: none;
+				}
 
 				h2 {
 					font-size: 2.2rem;
@@ -138,21 +165,9 @@ section {
 		.container {
 
 			.featured-story {
-				width: 96%;
-				float: none;
-				margin: auto;
 
 				&:nth-child(even),
 				&:nth-child(odd) {
-					float: none;
-					margin-left: auto;
-					margin-right: auto;
-				}
-
-				.img-container,
-				.content-container {
-					width: 100%;
-					float: none;
 				}
 			}
 		}

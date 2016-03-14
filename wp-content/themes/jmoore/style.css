@@ -54,8 +54,8 @@
  *
 ***************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	 v2.0 | 20110126
+	 License: none (public domain)
 */
 html,
 body,
@@ -205,6 +205,14 @@ body {
   background-repeat: no-repeat;
   background-position: center 123px;
 }
+body.no-overflow {
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  body {
+    background-position: center 106px;
+  }
+}
 .browser-upgrade {
   background-color: rgba(255, 255, 255, 0.86);
   color: #000000;
@@ -257,6 +265,18 @@ em {
 strong {
   font-family: 'harriet_textmedium', 'harriet_textregular', 'Times New Roman', Times, Serif;
 }
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 10;
+}
 .main-content-wrapper {
   padding-top: 30px;
 }
@@ -288,6 +308,20 @@ section {
   padding: 50px 0;
   margin: 0 auto 25px;
   position: relative;
+}
+.container:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 94%;
+    min-width: 0;
+    padding: 50px 20px;
+  }
 }
 /**************************************************************************************************
  *
@@ -419,18 +453,6 @@ i.icon-dbl-arrow-white {
   width: 9px;
   height: 9px;
   font-size: 2.0rem;
-}
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: 767px) {
-  .container {
-    width: 96%;
-    min-width: 0;
-    padding: 50px 20px;
-  }
 }
 /**
  * BxSlider v4.1.2 - Fully loaded, responsive content slider
@@ -602,8 +624,10 @@ i.icon-dbl-arrow-white {
  *
 ***************************************************************************************************/
 header {
+  position: relative;
   background: #FFFFFF;
   padding-bottom: 5px;
+  z-index: 11;
 }
 header:after {
   content: '';
@@ -617,11 +641,27 @@ header .row-two .container {
   margin: 0 auto;
   padding: 0;
 }
+@media only screen and (max-width: 767px) {
+  header .row-one {
+    padding-top: 20px;
+  }
+}
 header .row-one .container {
   padding-top: 60px;
 }
+@media only screen and (max-width: 767px) {
+  header .row-one .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
 header .row-one .container .logo {
   line-height: 0.8;
+}
+@media only screen and (max-width: 767px) {
+  header .row-one .container .logo {
+    float: left;
+  }
 }
 header .row-one .container .logo a {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
@@ -634,6 +674,11 @@ header .row-two {
   border-bottom: 1px solid #E2B6D9;
   margin: 0 0 5px;
 }
+@media only screen and (max-width: 767px) {
+  header .row-two .container {
+    width: 100%;
+  }
+}
 /**************************************************************************************************
  *
  *  @Section: Navigation Specific Styles
@@ -642,12 +687,42 @@ header .row-two {
 .nav {
   text-align: right;
 }
+@media only screen and (max-width: 767px) {
+  .nav {
+    background-color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s max-height ease-in;
+  }
+  .nav.open {
+    display: block;
+    max-height: 800px;
+  }
+}
 .nav li {
   display: inline-block;
   margin-left: 10px;
 }
+@media only screen and (max-width: 767px) {
+  .nav li {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    border-bottom: 1px solid #E2B6D9;
+  }
+}
 .nav li:first-child {
   margin-left: 0;
+}
+@media only screen and (max-width: 767px) {
+  .nav li:first-child {
+    border-top: 1px solid #E2B6D9;
+  }
 }
 .nav li.current {
   border-bottom: 2px solid #FD597F;
@@ -660,6 +735,11 @@ header .row-two {
   position: relative;
   display: block;
 }
+@media only screen and (max-width: 767px) {
+  .nav li a {
+    padding: 15px 15% 14px;
+  }
+}
 .nav li a:after {
   background-color: #FD597F;
   height: 2px;
@@ -671,19 +751,61 @@ header .row-two {
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
-.nav li a:hover:after {
-  bottom: -2px;
-  opacity: 1;
+@media only screen and (min-width: 767px) {
+  .nav li a:hover:after {
+    bottom: -2px;
+    opacity: 1;
+  }
 }
-.nav li.current-menu-item a:after {
-  bottom: -2px;
-  opacity: 1;
+@media only screen and (max-width: 767px) {
+  .nav li.current-menu-item a {
+    font-family: 'harriet_textbold', 'harriet_textregular', 'Times New Roman', Times, Serif;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .nav li.current-menu-item a:after {
+    bottom: -2px;
+    opacity: 1;
+  }
 }
 /**************************************************************************************************
  *
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
+.toggle-mobile-nav {
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 56%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.toggle-mobile-nav span {
+  background-color: #FD597F;
+  display: block;
+  width: 26px;
+  height: 2px;
+  margin-top: 6px;
+  transition: all 0.2s ease-in-out;
+}
+.toggle-mobile-nav span:first-child {
+  margin-top: 0;
+}
+.toggle-mobile-nav.open span:first-child {
+  -webkit-transform: rotate(45deg) translate3d(5px, 6px, 0);
+  -ms-transform: rotate(45deg) translate3d(5px, 6px, 0);
+  transform: rotate(45deg) translate3d(5px, 6px, 0);
+}
+.toggle-mobile-nav.open span:nth-child(2) {
+  opacity: 0;
+}
+.toggle-mobile-nav.open span:last-child {
+  -webkit-transform: rotate(-45deg) translate3d(6px, -6px, 0);
+  -ms-transform: rotate(-45deg) translate3d(6px, -6px, 0);
+  transform: rotate(-45deg) translate3d(6px, -6px, 0);
+}
 /**************************************************************************************************
  *
  *  @Section: Footer Styles
@@ -695,6 +817,12 @@ footer {
   background-color: #FD597F;
   margin: auto;
   padding-top: 8px;
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    width: 100%;
+    min-width: 0;
+  }
 }
 footer .content {
   width: 100%;
@@ -772,17 +900,6 @@ footer .content .footer-social-links li a.goodreads-link {
 }
 /**************************************************************************************************
  *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: 767px) {
-  footer {
-    width: 100%;
-    min-width: 0;
-  }
-}
-/**************************************************************************************************
- *
  *  @Section: Global Buttons & Global Link's Styles
  *
 ***************************************************************************************************/
@@ -804,11 +921,6 @@ footer .content .footer-social-links li a.goodreads-link {
   font-size: 2rem;
   color: #FD597F;
 }
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
 /**************************************************************************************************
  *
  *  @Section: Homepage Styles
@@ -849,6 +961,11 @@ section .container {
   padding: 0 0 60px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 767px) {
+  .featured-stories .container {
+    padding: 0;
+  }
+}
 .featured-stories .container:after {
   content: '';
   display: block;
@@ -862,10 +979,23 @@ section .container {
   margin-left: 5%;
   margin-bottom: 35px;
 }
+@media only screen and (max-width: 767px) {
+  .featured-stories .container .featured-story {
+    width: 80%;
+    float: none;
+    margin: 0 auto 60px;
+  }
+}
 .featured-stories .container .featured-story:nth-child(even) {
   margin-left: 0;
   margin-right: 5%;
   float: right;
+}
+@media only screen and (max-width: 767px) {
+  .featured-stories .container .featured-story:nth-child(even) {
+    float: none;
+    margin: 0 auto 60px;
+  }
 }
 .featured-stories .container .featured-story .img-container {
   width: 37%;
@@ -875,6 +1005,14 @@ section .container {
   border: 1px solid #FD597F;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .featured-stories .container .featured-story .img-container {
+    width: 100%;
+    padding-bottom: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
 }
 .featured-stories .container .featured-story .img-container:before {
   content: " ";
@@ -900,6 +1038,12 @@ section .container {
   width: 60%;
   float: right;
 }
+@media only screen and (max-width: 767px) {
+  .featured-stories .container .featured-story .content-container {
+    width: 100%;
+    float: none;
+  }
+}
 .featured-stories .container .featured-story .content-container h2 {
   font-size: 2.2rem;
 }
@@ -916,24 +1060,6 @@ section .container {
  *  @Section: Mobile Styles
  *
 ***************************************************************************************************/
-@media only screen and (max-width: 767px) {
-  .featured-stories .container .featured-story {
-    width: 96%;
-    float: none;
-    margin: auto;
-  }
-  .featured-stories .container .featured-story:nth-child(even),
-  .featured-stories .container .featured-story:nth-child(odd) {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .featured-stories .container .featured-story .img-container,
-  .featured-stories .container .featured-story .content-container {
-    width: 100%;
-    float: none;
-  }
-}
 /**************************************************************************************************
  *
  *  @Section: About Page Specific Styles
