@@ -30,19 +30,42 @@ section {
 					top: 50%;
 					.centered-vertically();
 
+					@media only screen and (max-width: @breakpoint) {
+						width: 83%;
+						float: none;
+						margin: 20px auto 30px;
+						position: relative;
+						top: 0;
+						.centered-vertically(0);
+					}
+
 					h1 {
 						font-family: @hd-thin;
 						font-size: 3.4rem;
 						font-weight: 100;
 						margin-bottom: 35px;
+
+						@media only screen and (max-width: @breakpoint) {
+							font-size: 2.2rem;
+							height: 4em;
+							line-height: 1.5;
+						}
 					}
 
 					&.right {
 						left: 45%;
+
+						@media only screen and (max-width: @breakpoint) {
+							left: 0;
+						}
 					}
 
 					&.left {
 						right: 45%;
+
+						@media only screen and (max-width: @breakpoint) {
+							right: 0;
+						}
 					}
 				}
 			}
@@ -152,26 +175,3 @@ section {
 		}
 	}
 }
-
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
-	.featured-stories {
-
-		.container {
-
-			.featured-story {
-
-				&:nth-child(even),
-				&:nth-child(odd) {
-				}
-			}
-		}
-	}
-}
-

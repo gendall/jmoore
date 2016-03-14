@@ -28,7 +28,12 @@ get_header();?>
 		?>
 
 			<li>
+				<?php if (wp_is_mobile()): ?>
+				<img src="<?php the_field('carousel_mobile_bg_image'); ?>" alt="Book Image">
+				<?php else: ?>
 				<img src="<?php the_field('carousel_bg_image'); ?>" alt="Book Image">
+				<?php endif; ?>
+
 				<div class="slide-content <?php the_field('carousel_orientation'); ?>">
 					<h1><?php the_field('carousel_message') ?></h1>
 					<a class="btn pink-btn" href="<?php the_field('carousel_button_link'); ?>"><?php the_field('carousel_button_text'); ?> &raquo;</a>

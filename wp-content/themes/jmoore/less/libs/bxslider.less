@@ -43,6 +43,10 @@
     	-ms-transform: translatez(0);
     	-o-transform: translatez(0);
     	transform: translatez(0);
+
+    	@media only screen and (max-width: @breakpoint) {
+    		background: transparent;
+    	}
 }
 
 .bx-wrapper .bx-pager,
@@ -77,6 +81,16 @@
 	border-bottom: 1px solid @purple;
 	padding-bottom: 2px;
 	width: calc(~'100% - 14px');
+
+	@media only screen and (max-width: @breakpoint) {
+		position: relative;
+		bottom: 0;
+		left: 0;
+		width: 80%;
+		margin: auto;
+		padding-top: 6px;
+		border-top: 1px solid @purple;
+	}
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,

@@ -81,6 +81,11 @@
   -ms-transform: translatez(0);
   transform: translatez(0);
 }
+@media only screen and (max-width: 767px) {
+  .bx-wrapper .bx-viewport {
+    background: transparent;
+  }
+}
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -109,6 +114,17 @@
   border-bottom: 1px solid #E2B6D9;
   padding-bottom: 2px;
   width: calc(100% - 14px);
+}
+@media only screen and (max-width: 767px) {
+  .bx-wrapper .bx-pager {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    margin: auto;
+    padding-top: 6px;
+    border-top: 1px solid #E2B6D9;
+  }
 }
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
@@ -962,17 +978,46 @@ section .container {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@media only screen and (max-width: 767px) {
+  .carousel .container .bxslider li .slide-content {
+    width: 83%;
+    float: none;
+    margin: 20px auto 30px;
+    position: relative;
+    top: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 .carousel .container .bxslider li .slide-content h1 {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 3.4rem;
   font-weight: 100;
   margin-bottom: 35px;
 }
+@media only screen and (max-width: 767px) {
+  .carousel .container .bxslider li .slide-content h1 {
+    font-size: 2.2rem;
+    height: 4em;
+    line-height: 1.5;
+  }
+}
 .carousel .container .bxslider li .slide-content.right {
   left: 45%;
 }
+@media only screen and (max-width: 767px) {
+  .carousel .container .bxslider li .slide-content.right {
+    left: 0;
+  }
+}
 .carousel .container .bxslider li .slide-content.left {
   right: 45%;
+}
+@media only screen and (max-width: 767px) {
+  .carousel .container .bxslider li .slide-content.left {
+    right: 0;
+  }
 }
 .featured-stories .container {
   padding: 0 0 60px;
@@ -1073,11 +1118,6 @@ section .container {
   font-size: 1.8rem;
   color: #FD597F;
 }
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
 /**************************************************************************************************
  *
  *  @Section: About Page Specific Styles
