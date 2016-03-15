@@ -625,6 +625,9 @@ section {
   font-size: 1.4rem;
   line-height: 1.4;
 }
+.generic-post .container article .generic-post-content p em {
+  font-family: 'harriet_textlight_italic', 'harriet_textregular', 'Times New Roman', Times, Serif;
+}
 .generic-post .container article .generic-post-content .author {
   font-size: 1.1rem;
   font-style: italic;
