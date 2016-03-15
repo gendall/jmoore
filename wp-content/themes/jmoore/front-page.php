@@ -106,6 +106,7 @@ get_header();?>
 			?>
 
 			<div class="img-container">
+				<img src="<?php the_field('book_cover_photo'); ?>" alt="Book Image">
 			</div>
 
 			<div class="content-container">
