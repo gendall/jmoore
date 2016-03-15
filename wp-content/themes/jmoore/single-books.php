@@ -39,7 +39,7 @@ get_header(); ?>
 				<div class="book-post-content generic-post-content">
 					<h1><?php the_title(); ?></h1>
 					<div><?php the_field('book_description'); ?></div>
-					<span>by <?php the_author(); ?></span>
+					<!-- <span>by <?php // the_author(); ?></span> -->
 				</div> <!-- /.summary -->
 			</article>
 		

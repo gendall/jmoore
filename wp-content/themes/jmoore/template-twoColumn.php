@@ -16,7 +16,7 @@ get_header(); ?>
 	<div class="container">
 
 		<div class="sidebar">
-			<img class="headshot" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/headshot.jpg" alt="">
+			<img class="headshot" src="<?php the_field('main_headshot'); ?>" alt="">
 		</div> <!-- /.sidebar -->
 
 		<div class="main-content">

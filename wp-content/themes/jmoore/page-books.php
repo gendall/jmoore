@@ -52,22 +52,29 @@ get_header(); ?>
 			<div class="column-two">
 				<h4><?php the_title(); ?></h4>
 				<hr class="purple-hr">
-				<p><?php the_field('book_summary'); ?></p>
+				<p>
+				<?php if(get_field('book_summary')):
+					the_field('book_summary');
+				else:
+					$cont = get_field('book_description');
+					echo substr($cont, 0, 195); ?>
+					[...]
+				<?php endif; ?>
+				</p>
 				<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.column-two -->
 
 			<div class="column-three">
 
 				<?php
-				if( have_rows('book_buy_now_links') ):
-
-					while( have_rows('book_buy_now_links') ): the_row();
-				?>
-				<p class="btn-buynow-container"><a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
-				<?php
-					endwhile;
-				endif;
-				?>
+				if( have_rows('book_buy_now_links') ): ?>
+				<h5>Purchase Options</h5>
+				<p class="btn-buynow-container">
+					<?php while( have_rows('book_buy_now_links') ): the_row(); ?>
+					<a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>" target="_blank"><?php the_sub_field('book_sellers_name'); ?><i class="icon-dbl-arrow-pink"></i></a>
+					<?php endwhile; ?>
+				</p>
+				<?php endif; ?>
 			</div> <!-- /.column-three -->
 		</div> <!-- .novel-summary -->
 

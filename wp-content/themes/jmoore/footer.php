@@ -16,10 +16,10 @@
 			
 
 			<ul class="footer-social-links">
-				<li><a class="facebook-link" href="" target="_blank">Facebook</a></li>
-				<li><a class="twitter-link" href="" target="_blank">Twitter</a></li>
-				<li><a class="pinterest-link" href="" target="_blank">Pinterest</a></li>
-				<li><a class="blogger-link" href="" target="_blank">Blogger</a></li>
+				<li><a class="facebook-link" href="https://www.facebook.com/jennifer.l.moore.90" target="_blank">Facebook</a></li>
+				<li><a class="twitter-link" href="https://twitter.com/JennytheBrave" target="_blank">Twitter</a></li>
+				<li><a class="pinterest-link" href="https://www.pinterest.com/jenniferlmoore9/" target="_blank">Pinterest</a></li>
+				<li><a class="blogger-link" href="http://www.shesgotthewritestuff.blogspot.com/" target="_blank">Blogger</a></li>
 				<li><a class="goodreads-link" href="" target="_blank">Goodreads</a></li>
 			</ul> <!-- /.footer-social-links -->
 

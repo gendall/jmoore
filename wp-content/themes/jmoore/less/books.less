@@ -26,6 +26,10 @@
 				float: left;
 				box-shadow: inset 0 0 0 1px @purple;
 
+				@media only screen and (max-width: @breakpoint) {
+					width: 50%;
+				}
+
 				&:last-child {
 					margin-left: -1px;
 				}
@@ -72,6 +76,11 @@
 	width: 90%;
 	margin: 0 auto 60px;
 
+	@media only screen and (max-width: @breakpoint) {
+		width: 100%;
+		margin-bottom: 50px;
+	}
+
 	&:after { .clear; }
 
 	.column-one,
@@ -86,12 +95,27 @@
 		float: left;
 		border: 1px solid @purple;
 		padding: 9px;
+
+		@media only screen and (max-width: @breakpoint) {
+			width: 100%;
+			float: none;
+			margin-bottom: 25px;
+		}
 	}
 
 	.column-two {
 		width: 58%;
 		float: left;
 		border-right: 1px solid @purple;
+
+		@media only screen and (max-width: @breakpoint) {
+			width: 100%;
+			float: none;
+			border-bottom: 1px solid @purple;
+			border-right: 0;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
 
 		h4 {
 			font-size: 2.4rem;
@@ -103,6 +127,7 @@
 
 			@media only screen and (max-width: @breakpoint) {
 				height: auto;
+				margin-bottom: 15px;
 			}
 		}
 
@@ -115,8 +140,55 @@
 	}
 
 	.column-three {
-		width: 20%;
+		width: 21%;
 		float: right;
+
+		@media only screen and (max-width: @breakpoint) {
+			width: 100%;
+			float: none;
+		}
+		
+		h5 {
+			color: @pink;
+			font-family: @ht-medium;
+			font-size: 1.8rem;
+			margin-bottom: 10px;
+		}
+
+		.btn-buynow-container {
+			padding: 18px 14px 12px;
+			background-color: @white;
+			border: 1px solid @purple;
+
+			@media only screen and (max-width: @breakpoint) {
+				padding-bottom: 8px;
+			}
+		}
+
+		a {
+			display: block;
+			margin-bottom: 8px;
+			font-family: @ht;
+			color: @pink;
+
+			@media only screen and (max-width: @breakpoint) {
+				display: inline-block;
+				margin-bottom: 12px;
+
+				&:after {
+					content: "|";
+					padding: 0 5px 0 7px;
+				}
+
+				&:last-child:after {
+					display: none;
+				}
+			}
+
+			i {
+				width: 8px;
+			}
+		}
 	}
 }
 
@@ -131,80 +203,4 @@
 	display: none;
 
 	.container {}
-}
-
-
-/**************************************************************************************************
- *
- *  @Section: Mobile Styles
- *
-***************************************************************************************************/
-@media only screen and (max-width: @breakpoint) {
-
-	.tabs-section {
-
-		.container {
-
-			ul {
-
-				li {
-					width: 50%;
-				}
-			}
-		}
-	}
-
-	.novel-summary,
-	.short-story-summary {
-		width: 100%;
-		// border-bottom: 1px solid @purple;
-		// padding-bottom: 20px;
-		margin-bottom: 50px;
-
-		.column-one,
-		.column-two,
-		.column-three {
-			width: 100%;
-		}
-
-		.column-one {
-			margin-bottom: 25px;
-		}
-
-		.column-two {
-			border-right: 0;
-			margin-bottom: 15px;
-
-			p {
-				margin-bottom: 15px;
-			}
-		}
-
-		.column-three {
-			// text-align: center;
-
-			.btn-buynow-container {
-				display: inline-block;
-
-				a {
-
-					&:after {
-						content: "|";
-						display: inherit;
-						padding: 0 5px 0 7px;
-					}
-				}
-
-				&:last-child {
-
-					a {
-
-						&:after {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-	}
 }

@@ -113,12 +113,13 @@ strong {
 }
 
 .main-page-title {
-	font-size: 4rem;
+	font-size: 4.0rem;
 	font-family: @hd-thin;
 	color: @pink;
 	margin: 0 auto 30px;
-	padding: 0;
+	padding: 0 0 10px;
 	border-bottom: 1px solid @purple;
+	line-height: 0.8;
 }
 
 .content {
@@ -311,6 +312,118 @@ section {
 					font-style: italic;
 					float: right;
 					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+/**************************************************************************************************
+ *
+ *  @Section: Forms
+ *
+***************************************************************************************************/
+form {
+	width: 100%;
+
+	label {}
+}
+
+.gform_wrapper {
+	margin: 0 auto !important;
+	max-width: 100% !important;
+
+	form {
+
+		h3.gform_title {
+			font-family: @hd-thin;
+			font-size: 4.0rem;
+			font-weight: normal;
+			color: @pink;
+			margin: 0 0 30px;
+			border-bottom: 1px solid @purple;
+			line-height: 0.8;
+			padding-bottom: 10px;
+
+			@media only screen and (max-width: @breakpoint) {
+				font-size: 3.0rem;
+			}
+		}
+
+		.gform_description {
+			font-family: @ht-light;
+			font-size: 1.4rem;
+			margin-bottom: 40px;
+			display: block;
+		}
+
+		.gfield_required {
+			color: @hot-pink;
+		}
+
+		ul {
+
+			li {
+				margin-bottom: 20px;
+
+				&.half-width {
+					width: 48%;
+
+					@media only screen and (max-width: @breakpoint) {
+						width: 100%;
+					}
+				}
+
+				&.left {
+					float: left;
+
+					@media only screen and (max-width: @breakpoint) {
+						float: none;
+					}
+				}
+
+				&.right {
+					float: right;
+
+					@media only screen and (max-width: @breakpoint) {
+						float: none;
+					}
+				}
+
+				&.gfield {
+					clear: none;
+
+					&.full-width {
+						clear: both;
+					}
+				}
+
+				label {
+					font-family: @ht-bold;
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		.hidden_label,
+		.top_label {
+			color: @dark-gray;
+
+			input[type="text"],
+			input[type="email"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="url"],
+			input[type="password"],
+			select,
+			textarea {
+				border: 1px solid #e6e6e6;
+				padding: 5px 10px;
+				line-height: 1.4;
+
+				&.large {
+					width: 100%;
 				}
 			}
 		}
