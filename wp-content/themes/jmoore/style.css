@@ -1610,8 +1610,7 @@ section .container {
 }
 .novel-summary .column-two p,
 .short-story-summary .column-two p {
-  height: 55px;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 @media only screen and (max-width: 767px) {
   .novel-summary .column-two p,
