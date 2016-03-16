@@ -1132,7 +1132,7 @@ section .container {
 }
 .carousel .container .bxslider li .slide-content h1 {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
-  font-size: 3.4rem;
+  font-size: 2.4vw;
   font-weight: 100;
   margin-bottom: 35px;
 }
@@ -1141,6 +1141,11 @@ section .container {
     font-size: 2.2rem;
     height: 4em;
     line-height: 1.5;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .carousel .container .bxslider li .slide-content h1 {
+    font-size: 3.4rem;
   }
 }
 .carousel .container .bxslider li .slide-content.right {
