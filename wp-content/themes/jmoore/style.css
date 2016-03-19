@@ -1236,11 +1236,8 @@ section .container {
   width: calc(100% - 10px);
   z-index: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: 5px;
+  left: 5px;
 }
 .featured-stories .container .featured-story .content-container {
   width: 60%;

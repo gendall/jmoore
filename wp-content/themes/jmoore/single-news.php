@@ -19,13 +19,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		
 			<article>
-			<?php if ( has_post_video() ): ?>
-
-				<div class="media-container-video media-container">
-					<?php the_post_video(); ?>
-				</div> <!-- /.media-container-video -->
-
-			<?php elseif ( has_post_thumbnail() ): ?>
+			<?php if ( has_post_thumbnail() ):  ?>
 
 				<div class="media-container-photo media-container">
 					<?php the_post_thumbnail(); ?>
