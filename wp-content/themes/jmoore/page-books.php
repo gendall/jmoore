@@ -40,45 +40,44 @@ get_header(); ?>
 		));
 
 		while($Books->have_posts()) : $Books->the_post(); //start the loop to print book list
+			if( get_field( 'book_category' ) == 'Novel'):
+			?>
 
-		if( get_field( 'book_category' ) == 'Novel'):
-		?>
+			<div class="novel-summary">
+				<div class="column-one">
+					<img src="<?php the_field('book_cover_photo'); ?>" alt="Book Image">
+				</div> <!-- /.column-one -->
 
-		<div class="novel-summary">
-			<div class="column-one">
-				<img src="<?php the_field('book_cover_photo'); ?>" alt="Book Image">
-			</div> <!-- /.column-one -->
+				<div class="column-two">
+					<h4><?php the_title(); ?></h4>
+					<hr class="purple-hr">
+					<p>
+					<?php if(get_field('book_summary')):
+						the_field('book_summary');
+					else:
+						$cont = get_field('book_description');
+						echo substr($cont, 0, 195); ?>
+						[...]
+					<?php endif; ?>
+					</p>
+					<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
+				</div> <!-- /.column-two -->
 
-			<div class="column-two">
-				<h4><?php the_title(); ?></h4>
-				<hr class="purple-hr">
-				<p>
-				<?php if(get_field('book_summary')):
-					the_field('book_summary');
-				else:
-					$cont = get_field('book_description');
-					echo substr($cont, 0, 195); ?>
-					[...]
-				<?php endif; ?>
-				</p>
-				<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
-			</div> <!-- /.column-two -->
+				<div class="column-three">
 
-			<div class="column-three">
+					<?php
+					if( have_rows('book_buy_now_links') ): ?>
+					<h5>Purchase Options</h5>
+					<p class="btn-buynow-container">
+						<?php while( have_rows('book_buy_now_links') ): the_row(); ?>
+						<a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>" target="_blank"><?php the_sub_field('book_sellers_name'); ?><i class="icon-dbl-arrow-pink"></i></a>
+						<?php endwhile; ?>
+					</p>
+					<?php endif; ?>
+				</div> <!-- /.column-three -->
+			</div> <!-- .novel-summary -->
 
-				<?php
-				if( have_rows('book_buy_now_links') ): ?>
-				<h5>Purchase Options</h5>
-				<p class="btn-buynow-container">
-					<?php while( have_rows('book_buy_now_links') ): the_row(); ?>
-					<a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>" target="_blank"><?php the_sub_field('book_sellers_name'); ?><i class="icon-dbl-arrow-pink"></i></a>
-					<?php endwhile; ?>
-				</p>
-				<?php endif; ?>
-			</div> <!-- /.column-three -->
-		</div> <!-- .novel-summary -->
-
-		<?php endif; ?>
+			<?php endif; ?>
 		<?php endwhile; ?>
 
 	</div> <!-- /.container -->
@@ -90,41 +89,43 @@ get_header(); ?>
 		<?php
 
 		while($Books->have_posts()) : $Books->the_post(); 
+			if( get_field( 'book_category' ) == 'Short Story'): ?>
 
-		if( get_field( 'book_category' ) == 'Short Story'): ?>
+			<div class="short-story-summary">
+				<div class="column-one">
+					<img src="<?php the_field('book_cover_photo'); ?>" alt="Book Image">
+				</div> <!-- /.column-one -->
 
+				<div class="column-two">
+					<h4><?php the_title(); ?></h4>
+					<hr class="purple-hr">
+					<p>
+					<?php if(get_field('book_summary')):
+						the_field('book_summary');
+					else:
+						$cont = get_field('book_description');
+						echo substr($cont, 0, 195); ?>
+						[...]
+					<?php endif; ?>
+					</p>
+					<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
+				</div> <!-- /.column-two -->
 
-		<div class="short-story-summary">
-			<div class="column-one">
-				<img src="<?php the_field('book_cover_photo'); ?>" alt="Book Image">
-			</div> <!-- /.column-one -->
+				<div class="column-three">
 
-			<div class="column-two">
-				<h4><?php the_title(); ?></h4>
-				<hr class="purple-hr">
-				<p><?php the_field('book_summary'); ?></p>
-				<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
-			</div> <!-- /.column-two -->
+					<?php
+					if( have_rows('book_buy_now_links') ): ?>
+					<h5>Purchase Options</h5>
+					<p class="btn-buynow-container">
+						<?php while( have_rows('book_buy_now_links') ): the_row(); ?>
+						<a class="btn-buynow" href="<?php the_sub_field('book_sellers_url'); ?>" target="_blank"><?php the_sub_field('book_sellers_name'); ?><i class="icon-dbl-arrow-pink"></i></a>
+						<?php endwhile; ?>
+					</p>
+					<?php endif; ?>
+				</div> <!-- /.column-three -->
+			</div> <!-- /.short-story-summary -->
 
-			<div class="column-three">
-				
-				<?php
-				if( have_rows('book_buy_now_links') ):
-
-					while( have_rows('book_buy_now_links') ): the_row();
-				?>
-						
-						<p><a href="<?php the_sub_field('book_sellers_url'); ?>"><?php the_sub_field('book_sellers_name'); ?></a></p>
-				​
-				<?php
-					endwhile;
-				endif;
-				?>
-			</div> <!-- /.column-three -->
-		</div> <!-- /.short-story-summary -->
-
-
-		<?php endif; ?>
+			<?php endif; ?>
 		<?php endwhile; // end of the loop. ?>
 		<?php wp_reset_postdata(); // reset the loop. ?>
 

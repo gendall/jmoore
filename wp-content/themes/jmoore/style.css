@@ -1593,6 +1593,7 @@ section .container {
 .short-story-summary .column-two {
   width: 58%;
   float: left;
+  padding-right: calc(1% - 1px);
   border-right: 1px solid #E2B6D9;
 }
 @media only screen and (max-width: 767px) {
@@ -1799,6 +1800,7 @@ section .container {
  *
 ***************************************************************************************************/
 .ahoy-landing .container {
+  padding: 50px 40px;
   margin-bottom: 0;
 }
 .ahoy-landing .container article {

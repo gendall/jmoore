@@ -30,14 +30,9 @@ function custom_field_excerpt() {
 		<h1 class="main-page-title"><?php the_title(); ?></h1>
 
 		<?php
-		// Previous/next page navigation.
-		the_posts_pagination(array(
-			'prev_text'          => __( 'Previous page', 'jmoore' ),
-			'next_text'          => __( 'Next page', 'jmoore' ),
-		));
 
 		$NewsAndEvents = new WP_Query(array(
-			'showposts'   => -1,  // -1 brings all books, otherwise it will bring the value define in wp settings, default is 10.
+			'showposts'   => -1,
 			'post_type'   => 'news'
 		));
 
@@ -45,7 +40,10 @@ function custom_field_excerpt() {
 		?>
 
 		<article>
-			<h2 class="news-date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_field('news_event_date'); ?></a></h2>
+			<h2 class="news-date">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_field('news_event_date'); ?></a>
+			</h2>
+
 			<hr class="purple-hr">
 
 			<p class="news-summary">

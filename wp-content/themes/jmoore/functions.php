@@ -17,6 +17,11 @@ function my_excerpt_length($length) {
 	return rand(45, 99);
 }
 
+// Moves Yoast plugin to bottom position.
+add_filter( 'wpseo_metabox_prio', function() {
+	return 'low';
+});
+
 if ( ! function_exists( 'jmoore_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
