@@ -10,50 +10,67 @@ get_header(); ?>
 <section class="ahoy-landing">
 	<div class="container">
 
-		<h1 class="main-page-title"><?php the_title(); ?></h1>
+		<div class="ahoy-hero">
+			<img src="<?php the_field( 'ahoy_landing_hero_image' ); ?>" alt="">
+		</div>
+		<div class="ahoy-summary">
+			<?php the_field( 'ahoy_landing_summary' ); ?>
+		</div>
 
-		<?php
-		$Ahoy = new WP_Query( array(
-			'showposts'   => -1,  // -1 brings all books, otherwise it will bring the value define in wp settings, default is 10.
-			'post_type'   => 'ahoy'
-		));
-		?>
+		<div class="articles-container">
 
-		<ul>
+			<ul>
 
-			<?php while($Ahoy->have_posts()) : $Ahoy->the_post(); ?>
+				<?php
+				$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+				$wp_query = new WP_Query(array(
+					'post_type' => 'ahoy-post-type',
+					'showposts' => 5,
+					'paged' => $paged
+					)
+				);
+				wp_pagenavi();
+				while ($wp_query->have_posts()) : $wp_query->the_post();
+				?>
 
-			<li>
-				<article>
-					<?php if ( has_post_video() ): ?>
+				<li>
+					<article>
+						<?php if ( has_post_video() ): ?>
 
-					<div class="media-container-video media-container">
-						<?php the_post_video(); ?>
-					</div> <!-- /.media-container-video -->
+						<div class="media-container-video media-container">
+							<?php the_post_video(); ?>
+						</div> <!-- /.media-container-video -->
 
-					<?php elseif ( has_post_thumbnail() ): ?>
+						<?php elseif ( has_post_thumbnail() ): ?>
 
-					<div class="media-container-photo media-container">
-						<?php the_post_thumbnail(); ?>
-					</div> <!-- /.media-container-photo -->
+						<div class="media-container-photo media-container">
+							<a href="<?php the_permalink(); ?>">
+								<?php
+								$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+								?>
+								<img src="<?php echo $thumbnail['0']; ?>" />
+							</a>
+						</div> <!-- /.media-container-photo -->
 
-					<?php endif; ?>
+						<?php endif; ?>
 
-					<div class="content-container">
-						<h1 class="title">
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						</h1>
-						<div class="summary">
-							<?php the_excerpt(); ?>
-							<span class="author">author: <?php the_author(); ?></span>
-						</div> <!-- /.summary -->
-					</div> <!-- /.ahoy-content-container -->
-				</article>
-			</li>
+						<div class="content-container">
+							<h1 class="title">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							</h1>
+							<hr class="purple-hr">
+							<div class="summary">
+								<?php the_excerpt(); ?>
+								<!-- <span class="author">author: <?php the_author(); ?></span> -->
+							</div> <!-- /.summary -->
+							<a class="links" href="<?php the_permalink(); ?>">Learn more <i class="icon-dbl-arrow-pink"></i></a>
+						</div> <!-- /.ahoy-content-container -->
+					</article>
+				</li>
 
-			<?php endwhile; ?>
-
-		</ul>
+				<?php endwhile; ?>
+			</ul>
+		</div> <!-- /.articles-container -->
 	</div> <!-- /.container -->
 </section> <!-- /#ahoyPosts -->
 

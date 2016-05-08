@@ -13,7 +13,6 @@ add_theme_support( 'post-thumbnails' );
 add_filter('excerpt_length', 'my_excerpt_length');
 
 function my_excerpt_length($length) {
-
 	return rand(45, 99);
 }
 
@@ -154,14 +153,14 @@ function create_post_type() {
 		array(
 			'labels' => array(
 				'name'					=> __( 'Hero Carousel' ),
-				'singular_name'		=> __( 'Slide' ),
+				'singular_name'			=> __( 'Slide' ),
 				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
 				'add_new'				=> __( 'Add Slide' ),
-				'add_new_item'		=> __( 'Add New Slide' ),
+				'add_new_item'			=> __( 'Add New Slide' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'						=> true,
+			'public'					=> true,
 			'has_archive'				=> false,
 		)
 	);
@@ -170,16 +169,16 @@ function create_post_type() {
 		array(
 			'labels' => array(
 				'name'					=> __( 'Books' ),
-				'singular_name'		=> __( 'Book' ),
+				'singular_name'			=> __( 'Book' ),
 				'description'			=> __( 'List of works written by Author Jenny Moore' ),
 				'add_new'				=> __( 'Add Book' ),
-				'add_new_item'		=> __( 'Add New Book' ),
+				'add_new_item'			=> __( 'Add New Book' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'						=> true,
+			'public'					=> true,
 			'has_archive'				=> false,
-			'taxonomies' => array('category'),
+			'taxonomies'				=> array('category'),
 		)
 	);
 
@@ -187,31 +186,34 @@ function create_post_type() {
 		array(
 			'labels' => array(
 				'name'					=> __( 'News/Events' ),
-				'singular_name'		=> __( 'News Article' ),
+				'singular_name'			=> __( 'News Article' ),
 				'description'			=> __( 'List of Events and News' ),
 				'add_new'				=> __( 'Add News Article' ),
-				'add_new_item'		=> __( 'Add New News Article' ),
+				'add_new_item'			=> __( 'Add New News Article' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'						=> true,
+			'public'					=> true,
 			'has_archive'				=> false,
+			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
 		)
 	);
 
-	register_post_type( 'ahoy',
+	register_post_type( 'ahoy-post-type',
 		array(
 			'labels' => array(
 				'name'					=> __( 'Ahoy' ),
-				'singular_name'		=> __( 'Ahoy Article' ),
+				'singular_name'			=> __( 'Ahoy Article' ),
 				'description'			=> __( 'Ahoy Posts' ),
 				'add_new'				=> __( 'Add Ahoy Article' ),
-				'add_new_item'		=> __( 'Add New Ahoy Article' ),
+				'add_new_item'			=> __( 'Add New Ahoy Article' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'						=> true,
+			'rewrite' => array("slug" => "ahoy"),
+			'public'					=> true,
 			'has_archive'				=> false,
+			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
 		)
 	);
 
@@ -219,14 +221,14 @@ function create_post_type() {
 		array(
 			'labels' => array(
 				'name'					=> __( 'FAQ\'s' ),
-				'singular_name'		=> __( 'FAQ' ),
+				'singular_name'			=> __( 'FAQ' ),
 				'description'			=> __( 'List of Frequently Asked Questions for the About Page.' ),
 				'add_new'				=> __( 'Add FAQ' ),
-				'add_new_item'		=> __( 'Add New FAQ' ),
+				'add_new_item'			=> __( 'Add New FAQ' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'public'						=> true,
+			'public'					=> true,
 			'has_archive'				=> false,
 		)
 	);

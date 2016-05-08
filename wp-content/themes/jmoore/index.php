@@ -16,21 +16,36 @@ get_header(); ?>
 	<section class="blog-landing">
 		<div class="container">
 
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<h1 class="main-page-title"><?php the_title(); ?></h1>
+
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 			<article>
-				<h1 class="blog-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-				<div class="featured-media-container">
-					<?php the_post_video() ?>
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
-				</div>
-				<div class="summary">
-					<?php the_excerpt(); ?>
-					<span class="blog-author">author: <?php the_author(); ?></span>
-				</div>
-			</article>
+			<h1 class="title">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h1>
 
-		<?php endwhile; ?>
+			<?php if ( has_post_video() ): ?>
+
+			<div class="media-container-video media-container">
+				<?php the_post_video(); ?>
+			</div> <!-- /.media-container-video -->
+
+			<?php elseif ( has_post_thumbnail() ): ?>
+
+			<div class="media-container-photo media-container">
+				<?php the_post_thumbnail(); ?>
+			</div> <!-- /.media-container-photo -->
+
+			<?php endif; ?>
+
+			<div class="summary bleep">
+				<?php the_excerpt(); ?>
+				<span class="author">author: <?php the_author(); ?></span>
+			</div>
+		</article>
+
+			<?php endwhile; ?>
 
 		</div>
 	</section> <!-- /.blog-landing -->

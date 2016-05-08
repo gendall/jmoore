@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying full blog posts.
+ * The template for displaying full ahoy posts.
  *
  * This is the template that displays full blog posts by default.
  * Please note that this is the WordPress construct of pages
@@ -35,8 +35,12 @@ get_header(); ?>
 				
 				<div class="ahoy-post-content generic-post-content">
 					<h1><?php the_title(); ?></h1>
-					<div><?php the_content(); ?></div>
-					<span>by <?php the_author(); ?></span>
+
+					<div class="default-text">
+						<?php the_content(); ?>
+					</div> <!-- /.generic-post-content -->
+
+					<!-- <span>by <?php the_author(); ?></span> -->
 				</div> <!-- /.summary -->
 			</article>
 		

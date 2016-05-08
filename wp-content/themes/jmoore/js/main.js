@@ -30,6 +30,20 @@ $(function() {
 
 	});
 
+	// If no featured image is set, make post summary go full-width.
+	var $blogPage = $('body.page-template-page-blog');
+	var $ahoyPage = $('body.page-template-page-ahoy');
+	if ( $blogPage || $ahoyPage ) {
+
+		$('article').each(function() {
+			var that = $(this);
+			var $mediaContainer = that.children('.media-container');
+			if ( $mediaContainer.length === 0 ) {
+				that.children('.summary').addClass('full-width');
+			}
+		});
+	}
+ 
 	// Remove any empty <p> elements.
 	$('p').each(function() {
 		var $this = $(this);

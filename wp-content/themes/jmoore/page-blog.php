@@ -13,13 +13,17 @@ get_header(); ?>
 		<h1 class="main-page-title"><?php the_title(); ?></h1>
 
 		<?php
-		query_posts('category_name=Blog Posts');
-		while (have_posts()) : the_post();
+		$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+		$wp_query = new WP_Query(array(
+			'post_type' => 'post',
+			'showposts' => 5,
+			'paged' => $paged
+			)
+		);
+		wp_pagenavi();
+		while ($wp_query->have_posts()) : $wp_query->the_post();
 		?>
 		<article>
-			<h1 class="title">
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-			</h1>
 
 			<?php if ( has_post_video() ): ?>
 
@@ -36,11 +40,17 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<div class="summary">
+				<h1 class="title">
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				</h1>
+
 				<?php the_excerpt(); ?>
-				<span class="author">author: <?php the_author(); ?></span>
+				<!-- <span class="author">author: <?php the_author(); ?></span> -->
 			</div>
 		</article>
+
 		<?php endwhile; ?>
+
 	</div>
 </section> <!-- /#blogPosts -->
 

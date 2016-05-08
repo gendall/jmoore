@@ -9,51 +9,113 @@
 		padding: 50px 40px;
 		margin-bottom: 0;
 
-		article {
-			width: 90%;
-			margin: 0 auto 50px;
+		.ahoy-hero {
+			margin-bottom: 45px;
+		}
 
-			&:last-child {
-				margin: 0 auto;
+		.ahoy-summary {
+			-web-kit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+			-webkit-column-gap: 36px;
+			-moz-column-gap: 36px;
+			column-gap: 36px;
+			margin-bottom: 40px;
+
+			p {
+				margin-bottom: 20px;
 			}
+		}
 
-			.title {
+		.articles-container {
+			border-top: 4px solid @purple;
+			padding-top: 20px;
 
-				a {
-					font-size: 2.6rem;
-					font-weight: 700;
-					margin-bottom: 20px;
-				}
+			ul {
 
-				p {
-					margin-bottom: 10px;
-				}
-			}
 
-			.featured-media-container {
-				width: 60%;
-				min-width: 640px;
-				max-height: 450px;
-				overflow: hidden;
-				margin-bottom: 15px;
+				li {
+					margin-bottom: 70px;
 
-				a {
-					display: block;
+					&:last-child {
+						margin-bottom: 0;
+					}
 
-					img {}
-				}
+					article {
+						width: 100%;
+						margin: 0 auto 50px;
 
-				iframe {
-					width: 100%;
-				}
-			}
+						&:after { .clear; }
 
-			.summary {
+						&:last-child {
+							margin: 0 auto;
+						}
 
-				.author {
-					font-size: 1.2rem;
-					font-style: italic;
-					font-weight: 100;
+						.title {
+
+							a {
+								font-size: 2.6rem;
+							}
+
+							p {
+								margin-bottom: 10px;
+							}
+						}
+
+						.media-container {
+							width: 56%;
+							max-height: 450px;
+							overflow: hidden;
+							float: left;
+							padding: 10px 0;
+							border-top: 1px solid @purple;
+							border-bottom: 1px solid @purple;
+
+							a {
+								display: block;
+								overflow: hidden;
+								position: relative;
+								max-height: 428px;
+							}
+
+							img {}
+
+							iframe {
+								width: 100%;
+							}
+						}
+
+						.content-container {
+							float: right;
+							width: 40%;
+						}
+
+						.summary {
+							margin-bottom: 20px;
+
+							.author {
+								font-size: 1.2rem;
+								font-style: italic;
+								font-weight: 100;
+							}
+						}
+					}
+
+					&:nth-child(even) {
+
+						article {
+
+							.media-container {
+								width: 40%;
+								float: right;
+							}
+
+							.content-container {
+								width: 56%;
+								float: left;
+							}
+						}
+					}
 				}
 			}
 		}

@@ -32,21 +32,18 @@ get_header(); ?>
 			?>
 
 			<ul class="faqs">
-				<?php
-				while($faqs->have_posts()) : $faqs->the_post(); // Start the loop to print faq list.
-				?>
+				<?php while($faqs->have_posts()) : $faqs->the_post(); ?>
+				
 				<li>
 					<h5 class="question"><?php the_title(); ?><i class="icon-faq-arrow"></i></h5>
 					<div class="answer"><?php the_content(); ?></div>
 				</li>
+
 				<?php endwhile; ?>
 			</ul>
 
 		</div> <!-- /.main-content -->
-
 	</div> <!-- /.container -->
 </section> <!-- /.about-section -->
-
-
 
 <?php get_footer(); ?>

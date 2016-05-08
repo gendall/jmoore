@@ -213,7 +213,7 @@ section {
 
 			.generic-post-content {
 
-				h1 {
+				> h1 {
 					font-size: 4.0rem;
 					line-height: 0.9;
 					color: @pink;
@@ -316,6 +316,30 @@ section {
 					font-style: italic;
 					float: right;
 					display: block;
+				}
+
+				img {
+
+					&.size-thumbnail,
+					&.size-medium,
+					&.size-full {
+						width: auto;
+						height: auto;
+					}
+
+					&.alignleft {
+						float: left;
+						margin-right: 15px;
+					}
+
+					&.aligncenter {
+						margin: 0 auto 15px;
+					}
+
+					&.alignright {
+						float: right;
+						margin-left: 15px;
+					}
 				}
 			}
 		}
