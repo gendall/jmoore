@@ -46,6 +46,7 @@
 					height: auto;
 					max-width: 100%;
 					min-width: 0;
+					float: none;
 				}
 
 				a {
@@ -67,6 +68,11 @@
 			.summary {
 				width: 55%;
 				float: right;
+
+				@media only screen and (max-width: @breakpoint) {
+					width: 100%;
+					float: none;
+				}
 
 				&.full-width {
 					width: 100%;

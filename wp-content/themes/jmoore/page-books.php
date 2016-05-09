@@ -60,7 +60,7 @@ get_header(); ?>
 					[...]
 				<?php endif; ?>
 				</p>
-				<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
+				<a class="links link-continueReading" href="<?php echo esc_url( get_permalink() );?>" title="Continue Reading">Continue Reading<i class="icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.column-two -->
 
 			<div class="column-three">

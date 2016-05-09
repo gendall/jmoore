@@ -73,7 +73,7 @@ get_header(); ?>
 								<?php the_excerpt(); ?>
 								<!-- <span class="author">author: <?php the_author(); ?></span> -->
 							</div> <!-- /.summary -->
-							<a class="links" href="<?php the_permalink(); ?>">Learn more <i class="icon-dbl-arrow-pink"></i></a>
+							<a class="links" href="<?php the_permalink(); ?>" title="Learn more">Learn more <i class="icon-dbl-arrow-pink"></i></a>
 						</div> <!-- /.ahoy-content-container -->
 					</article>
 				</li>
