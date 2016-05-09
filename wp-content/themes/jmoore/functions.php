@@ -149,22 +149,6 @@ add_action( 'wp_enqueue_scripts', 'jmoore_styles' );
  * Custom Post Types.
  */
 function create_post_type() {
-	register_post_type( 'slides',
-		array(
-			'labels' => array(
-				'name'					=> __( 'Hero Carousel' ),
-				'singular_name'			=> __( 'Slide' ),
-				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
-				'add_new'				=> __( 'Add Slide' ),
-				'add_new_item'			=> __( 'Add New Slide' ),
-				'not_found'				=> __( 'Not found', 'text-domain' ),
-				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
-			),
-			'public'					=> true,
-			'has_archive'				=> false,
-		)
-	);
-
 	register_post_type( 'books',
 		array(
 			'labels' => array(
@@ -217,6 +201,22 @@ function create_post_type() {
 		)
 	);
 
+	register_post_type( 'slides',
+		array(
+			'labels' => array(
+				'name'					=> __( 'Hero Carousel' ),
+				'singular_name'			=> __( 'Slide' ),
+				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
+				'add_new'				=> __( 'Add Slide' ),
+				'add_new_item'			=> __( 'Add New Slide' ),
+				'not_found'				=> __( 'Not found', 'text-domain' ),
+				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
+			),
+			'public'					=> true,
+			'has_archive'				=> false,
+		)
+	);
+
 	register_post_type( 'faqs',
 		array(
 			'labels' => array(
@@ -234,7 +234,6 @@ function create_post_type() {
 	);
 }
 add_action( 'init', 'create_post_type' );
-
 
 add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 	
