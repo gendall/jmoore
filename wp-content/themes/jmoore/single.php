@@ -33,10 +33,10 @@ get_header(); ?>
 
 			<?php endif; ?>
 				
-				<div class="blog-content generic-post-content">
+				<div class="blog-content generic-post-content default-text">
 					<h1><?php the_title(); ?></h1>
 					<div><?php the_content(); ?></div>
-					<span class="author">by <?php the_author(); ?></span>
+					<!-- <span class="author">by <?php the_author(); ?></span> -->
 				</div> <!-- /.summary -->
 			</article>
 		

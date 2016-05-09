@@ -19,6 +19,10 @@ section {
 
 		.bxslider {
 
+			@media only screen and (max-width: @breakpoint) {
+				height: auto !important;
+			}
+
 			li {
 				position: relative;
 
@@ -47,7 +51,6 @@ section {
 
 						@media only screen and (max-width: @breakpoint) {
 							font-size: 2.2rem;
-							height: 4em;
 							line-height: 1.5;
 						}
 

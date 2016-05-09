@@ -11,6 +11,19 @@
 
 		.ahoy-hero {
 			margin-bottom: 45px;
+
+			@media only screen and (max-width: @breakpoint) {
+				height: 200px;
+				overflow: hidden;
+
+				img {
+					position: relative;
+					left: 50%;
+					height: 100%;
+					width: auto;
+					.centered-horizontally();
+				}
+			}
 		}
 
 		.ahoy-summary {
@@ -21,6 +34,15 @@
 			-moz-column-gap: 36px;
 			column-gap: 36px;
 			margin-bottom: 40px;
+
+			@media only screen and (max-width: @breakpoint) {
+				-web-kit-column-count: 1;
+				-moz-column-count: 1;
+				column-count: 1;
+				-webkit-column-gap: 0;
+				-moz-column-gap: 0;
+				column-gap: 0;
+			}
 
 			p {
 				margin-bottom: 20px;
@@ -74,6 +96,7 @@
 							@media only screen and (max-width: @breakpoint) {
 								width: 100%;
 								float: none;
+								margin-bottom: 8px;
 							}
 
 							a {
@@ -118,11 +141,22 @@
 							.media-container {
 								width: 40%;
 								float: right;
+
+								@media only screen and (max-width: @breakpoint) {
+									width: 100%;
+									float: none;
+									margin-bottom: 8px;
+								}
 							}
 
 							.content-container {
 								width: 56%;
 								float: left;
+
+								@media only screen and (max-width: @breakpoint) {
+									width: 100%;
+									float: none;
+								}
 							}
 						}
 					}

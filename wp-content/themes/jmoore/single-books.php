@@ -36,7 +36,7 @@ get_header(); ?>
 				</div> <!-- /.media-container-photo -->
 			<?php endif; ?>
 				
-				<div class="book-post-content generic-post-content">
+				<div class="book-post-content generic-post-content default-text">
 					<h1><?php the_title(); ?></h1>
 					<div><?php the_field('book_description'); ?></div>
 					<!-- <span>by <?php // the_author(); ?></span> -->

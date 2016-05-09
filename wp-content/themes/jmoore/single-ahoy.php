@@ -33,7 +33,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 				
-				<div class="ahoy-post-content generic-post-content">
+				<div class="ahoy-post-content generic-post-content default-text">
 					<h1><?php the_title(); ?></h1>
 
 					<div class="default-text">

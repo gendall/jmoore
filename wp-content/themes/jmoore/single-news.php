@@ -27,7 +27,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 				
-				<div class="news-post-content generic-post-content">
+				<div class="news-post-content generic-post-content default-text">
 					<div class="event-heading">
 						<h1><?php the_title(); ?></h1>
 						<h4>
