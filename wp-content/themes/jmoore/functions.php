@@ -163,6 +163,7 @@ function create_post_type() {
 			'public'					=> true,
 			'has_archive'				=> false,
 			'taxonomies'				=> array('category'),
+			'supports'					=> 'revisions',
 		)
 	);
 
@@ -179,7 +180,7 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
 		)
 	);
 
@@ -197,7 +198,7 @@ function create_post_type() {
 			'rewrite' => array("slug" => "ahoy"),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
 		)
 	);
 
@@ -214,6 +215,7 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
+			'supports'					=> 'revisions',
 		)
 	);
 
@@ -230,6 +232,7 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
+			'supports'					=> 'revisions',
 		)
 	);
 }
