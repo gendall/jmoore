@@ -566,7 +566,8 @@ section {
     float: none;
   }
 }
-.generic-post .container article .generic-post-content > h1 {
+.generic-post .container article .generic-post-content > h1,
+.generic-post .container article .generic-post-content .event-heading h1 {
   font-size: 4.0rem;
   line-height: 0.9;
   color: #FD597F;
@@ -575,7 +576,8 @@ section {
   overflow: visible;
 }
 @media only screen and (max-width: 767px) {
-  .generic-post .container article .generic-post-content > h1 {
+  .generic-post .container article .generic-post-content > h1,
+  .generic-post .container article .generic-post-content .event-heading h1 {
     font-size: 3.0rem;
   }
 }

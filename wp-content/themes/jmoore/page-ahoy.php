@@ -10,12 +10,22 @@ get_header(); ?>
 <section class="ahoy-landing">
 	<div class="container">
 
+		<?php if( get_field( 'ahoy_landing_hero_image') ) : ?>
+
 		<div class="ahoy-hero">
 			<img src="<?php the_field( 'ahoy_landing_hero_image' ); ?>" alt="">
 		</div>
+
+		<?php
+		endif;
+		if ( get_field( 'ahoy_landing_summary' ) ) :
+		?>
+
 		<div class="ahoy-summary">
 			<?php the_field( 'ahoy_landing_summary' ); ?>
 		</div>
+
+		<?php endif; ?>
 
 		<div class="articles-container">
 
