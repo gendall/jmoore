@@ -167,17 +167,18 @@ function create_post_type() {
 		)
 	);
 
-	register_post_type( 'news',
+	register_post_type( 'news-event-post-type',
 		array(
 			'labels' => array(
 				'name'					=> __( 'News/Events' ),
-				'singular_name'			=> __( 'News Article' ),
+				'singular_name'			=> __( 'News/Event Article' ),
 				'description'			=> __( 'List of Events and News' ),
 				'add_new'				=> __( 'Add News Article' ),
-				'add_new_item'			=> __( 'Add New News Article' ),
+				'add_new_item'			=> __( 'Add a News/Event Article' ),
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
+			'rewrite' => array('slug' => 'news-event'),
 			'public'					=> true,
 			'has_archive'				=> false,
 			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
@@ -195,7 +196,7 @@ function create_post_type() {
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'rewrite' => array("slug" => "ahoy"),
+			'rewrite' => array('slug' => 'ahoy'),
 			'public'					=> true,
 			'has_archive'				=> false,
 			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),

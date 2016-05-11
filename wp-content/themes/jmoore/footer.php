@@ -16,7 +16,7 @@
 			
 
 			<ul class="footer-social-links">
-				<li><a class="facebook-link" href="https://www.facebook.com/jennifer.l.moore.90" target="_blank">Facebook</a></li>
+				<li><a class="facebook-link" href="https://www.facebook.com/Author-Jennifer-Moore-1505064716465842/?ref=aymt_homepage_panel " target="_blank">Facebook</a></li>
 				<li><a class="twitter-link" href="https://twitter.com/JennytheBrave" target="_blank">Twitter</a></li>
 				<li><a class="pinterest-link" href="https://www.pinterest.com/jenniferlmoore9/" target="_blank">Pinterest</a></li>
 				<li><a class="blogger-link" href="http://www.shesgotthewritestuff.blogspot.com/" target="_blank">Blogger</a></li>

@@ -32,7 +32,7 @@ function custom_field_excerpt() {
 		<?php
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 		$wp_query = new WP_Query(array(
-			'post_type' => 'news',
+			'post_type' => 'news-event-post-type',
 			'showposts' => 5,
 			'paged' => $paged
 			)
