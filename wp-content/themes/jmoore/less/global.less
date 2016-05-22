@@ -145,6 +145,33 @@ section {
 		min-width: 0;
 		padding: 50px 20px;
 	}
+
+	article {
+		clear: both;
+	}
+}
+
+.wp-pagenavi {
+	float: right;
+	margin-bottom: 20px;
+
+	&:after { .clear; }
+
+	a,
+	span,
+	a:hover,
+	span.current {
+		border: 0;
+		padding: 1px 5px 3px;
+		display: inline-block;
+		margin: 0 2px;
+	}
+
+	a:hover,
+	span.current {
+		background-color: @pink;
+		color: @white;
+	}
 }
 
 

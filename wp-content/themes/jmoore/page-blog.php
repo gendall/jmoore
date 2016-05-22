@@ -16,7 +16,7 @@ get_header(); ?>
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 		$wp_query = new WP_Query(array(
 			'post_type' => 'post',
-			'showposts' => 5,
+			'showposts' => 12,
 			'paged' => $paged
 			)
 		);

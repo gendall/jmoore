@@ -59,7 +59,7 @@ function jmoore_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary'		=> __( 'Primary Menu', 'jmoore' ),
+		'primary'	=> __( 'Primary Menu', 'jmoore' ),
 		'secondary'	=> __( 'Secondary Menu', 'jmoore' ),
 	) );
 
@@ -89,8 +89,8 @@ function jmoore_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'jmoore_custom_background_args', array(
-		'default-color'		=> '',
-		'default-image'		=> '',
+		'default-color'	=> '',
+		'default-image'	=> '',
 	) ) );
 }
 endif; // jmoore_setup
@@ -103,13 +103,13 @@ add_action( 'after_setup_theme', 'jmoore_setup' );
  */
 function jmoore_widgets_init() {
 	register_sidebar( array(
-		'name'				=> __( 'Sidebar', 'jmoore' ),
-		'id'					=> 'sidebar-1',
-		'description'		=> '',
+		'name'			=> __( 'Sidebar', 'jmoore' ),
+		'id'			=> 'sidebar-1',
+		'description'	=> '',
 		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'		=> '</aside>',
-		'before_title'		=> '<h1 class="widget-title">',
-		'after_title'			=> '</h1>',
+		'after_widget'	=> '</aside>',
+		'before_title'	=> '<h1 class="widget-title">',
+		'after_title'	=> '</h1>',
 	) );
 }
 add_action( 'widgets_init', 'jmoore_widgets_init' );
@@ -151,7 +151,7 @@ add_action( 'wp_enqueue_scripts', 'jmoore_styles' );
 function create_post_type() {
 	register_post_type( 'books',
 		array(
-			'labels' => array(
+			'labels'					=> array(
 				'name'					=> __( 'Books' ),
 				'singular_name'			=> __( 'Book' ),
 				'description'			=> __( 'List of works written by Author Jenny Moore' ),
@@ -162,14 +162,15 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'taxonomies'				=> array('category'),
-			'supports'					=> 'revisions',
+			'taxonomies'				=> array(
+				'category'
+			),
 		)
 	);
 
 	register_post_type( 'news-event-post-type',
 		array(
-			'labels' => array(
+			'labels'					=> array(
 				'name'					=> __( 'News/Events' ),
 				'singular_name'			=> __( 'News/Event Article' ),
 				'description'			=> __( 'List of Events and News' ),
@@ -178,16 +179,17 @@ function create_post_type() {
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'rewrite' => array('slug' => 'news-event-article'),
+			'rewrite'					=> array(
+				'slug'					=> 'news-event-article'
+			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
 		)
 	);
 
 	register_post_type( 'ahoy-post-type',
 		array(
-			'labels' => array(
+			'labels'					=> array(
 				'name'					=> __( 'Ahoy' ),
 				'singular_name'			=> __( 'Ahoy Article' ),
 				'description'			=> __( 'Ahoy Posts' ),
@@ -196,16 +198,17 @@ function create_post_type() {
 				'not_found'				=> __( 'Not found', 'text-domain' ),
 				'not_found_in_trash'	=> __( 'Not found in trash', 'text_domain' ),
 			),
-			'rewrite' => array('slug' => 'ahoy-article'),
+			'rewrite'					=> array(
+				'slug'					=> 'ahoy-article'
+			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
 		)
 	);
 
 	register_post_type( 'slides',
 		array(
-			'labels' => array(
+			'labels'					=> array(
 				'name'					=> __( 'Hero Carousel' ),
 				'singular_name'			=> __( 'Slide' ),
 				'description'			=> __( 'Slides for the Homepage Hero Carousel' ),
@@ -216,13 +219,12 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports'					=> 'revisions',
 		)
 	);
 
 	register_post_type( 'faqs',
 		array(
-			'labels' => array(
+			'labels'					=> array(
 				'name'					=> __( 'FAQ\'s' ),
 				'singular_name'			=> __( 'FAQ' ),
 				'description'			=> __( 'List of Frequently Asked Questions for the About Page.' ),
@@ -233,7 +235,6 @@ function create_post_type() {
 			),
 			'public'					=> true,
 			'has_archive'				=> false,
-			'supports'					=> 'revisions',
 		)
 	);
 }
@@ -269,6 +270,11 @@ function add_current_nav_class($classes, $item) {
  * Hide the Admin Bar when user is logged in.
  */
 add_filter('show_admin_bar', '__return_false');
+
+// Moves Yoast plugin to bottom position.
+add_filter( 'wpseo_metabox_prio', function() {
+	return 'low';
+});
 
 /**
  * Implement the Custom Header feature.
