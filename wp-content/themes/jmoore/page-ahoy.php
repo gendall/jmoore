@@ -35,7 +35,7 @@ get_header(); ?>
 				$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 				$wp_query = new WP_Query(array(
 					'post_type' => 'ahoy-post-type',
-					'showposts' => 2,
+					'showposts' => 12,
 					'paged' => $paged
 					)
 				);
@@ -55,9 +55,7 @@ get_header(); ?>
 
 						<div class="media-container-photo media-container">
 							<a href="<?php the_permalink(); ?>">
-								<?php
-								$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
-								?>
+								<?php $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' ); ?>
 								<img src="<?php echo $thumbnail['0']; ?>" />
 							</a>
 						</div> <!-- /.media-container-photo -->

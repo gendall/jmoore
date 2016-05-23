@@ -16,17 +16,17 @@ get_header(); ?>
 	<section class="full-news-article generic-post">
 		<div class="container">
 
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
 			<article>
-			<?php if ( has_post_thumbnail() ):  ?>
+				<?php if ( has_post_thumbnail() ):  ?>
 
 				<div class="media-container-photo media-container">
 					<?php the_post_thumbnail(); ?>
 				</div> <!-- /.media-container-photo -->
 
-			<?php endif; ?>
-				
+				<?php endif; ?>
+
 				<div class="news-post-content generic-post-content default-text">
 					<div class="event-heading">
 						<h1><?php the_title(); ?></h1>
@@ -39,18 +39,18 @@ get_header(); ?>
 							the_field('news_event_location');
 							?>
 						</h4>
-					</div>
+					</div> <!-- /.event-heading -->
 
 					<h5 class="news-date"><strong>Date:</strong> <?php the_field('news_event_date'); ?></h5>
 					<h5 class="news-time"><strong>Time:</strong> <?php the_field('news_event_time'); ?></h5>
 
 					<p><?php the_field('news_event_details'); ?></p>
 					<?php the_content(); ?>
-				
+
 				</div> <!-- /.summary -->
 			</article>
-		
-		<?php endwhile; ?>
+
+			<?php endwhile; ?>
 
 		</div> <!-- /.container -->
 	</section> <!-- /.full-article -->

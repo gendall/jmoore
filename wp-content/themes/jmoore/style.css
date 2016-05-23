@@ -1114,7 +1114,7 @@ footer .content .footer-social-links li a.blogger-link {
   background-position: -102px 0;
 }
 footer .content .footer-social-links li a.goodreads-link {
-  background-position: -136px 0;
+  background-position: -135px 0;
 }
 /**************************************************************************************************
  *
@@ -1204,7 +1204,7 @@ section .container {
   font-family: 'harriet_displaythin', 'harriet_displayregular', 'Times New Roman', Times, Serif;
   font-size: 2.4vw;
   font-weight: 100;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 @media only screen and (max-width: 767px) {
   .carousel .container .bxslider li .slide-content h1 {

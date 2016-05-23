@@ -5,11 +5,7 @@
  * @package jmoore
  */
 
-// Featured Images
-add_theme_support( 'post-thumbnails' );
-// remove_filter('the_content', 'wpautop');
-
-// Control how long the blog post excerpt is on the blog page.
+// Control and randomize how long the blog post excerpt is on the blog page.
 add_filter('excerpt_length', 'my_excerpt_length');
 
 function my_excerpt_length($length) {
@@ -55,7 +51,7 @@ function jmoore_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'faqs' ) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -240,8 +236,7 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
-add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
-	
+add_action( 'nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 function add_current_nav_class($classes, $item) {
 	
 	// Getting the current post details
@@ -263,7 +258,6 @@ function add_current_nav_class($classes, $item) {
 	
 	// Return the corrected set of classes to be added to the menu item
 	return $classes;
-
 }
 
 /**

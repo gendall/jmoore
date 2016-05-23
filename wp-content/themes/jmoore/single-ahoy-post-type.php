@@ -16,23 +16,23 @@ get_header(); ?>
 	<section class="full-ahoy-article generic-post">
 		<div class="container">
 
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 			<article>
-			<?php if ( has_post_video() ): ?>
+				<?php if ( has_post_video() ): ?>
 
 				<div class="media-container-video media-container">
 					<?php the_post_video(); ?>
 				</div> <!-- /.media-container-video -->
 
-			<?php elseif ( has_post_thumbnail() ): ?>
+				<?php elseif ( has_post_thumbnail() ): ?>
 
 				<div class="media-container-photo media-container">
 					<?php the_post_thumbnail(); ?>
 				</div> <!-- /.media-container-photo -->
 
-			<?php endif; ?>
-				
+				<?php endif; ?>
+
 				<div class="ahoy-post-content generic-post-content default-text">
 					<h1><?php the_title(); ?></h1>
 
@@ -43,8 +43,8 @@ get_header(); ?>
 					<!-- <span>by <?php the_author(); ?></span> -->
 				</div> <!-- /.summary -->
 			</article>
-		
-		<?php endwhile; ?>
+
+			<?php endwhile; ?>
 
 		</div> <!-- /.container -->
 	</section> <!-- /.full-article -->
