@@ -74,10 +74,12 @@
 .novel-summary,
 .short-story-summary {
 	width: 90%;
+	min-width: 700px;
 	margin: 0 auto 60px;
 
 	@media only screen and (max-width: @breakpoint) {
 		width: 100%;
+		min-width: 0;
 		margin-bottom: 50px;
 	}
 
@@ -104,10 +106,15 @@
 	}
 
 	.column-two {
-		width: 57%;
+		width: 56%;
 		float: left;
 		padding-right: ~"calc(1% - 1px)";
+		margin-right: 1%;
 		border-right: 1px solid @purple;
+
+		@media only screen and (max-width: 1115px) {
+			width: 54%;
+		}
 
 		@media only screen and (max-width: @breakpoint) {
 			width: 100%;
@@ -144,8 +151,13 @@
 		width: 22%;
 		float: right;
 
+		@media only screen and (max-width: 1115px) {
+			width: 25%;
+		}
+
 		@media only screen and (max-width: @breakpoint) {
 			width: 100%;
+			min-width: 0;
 			float: none;
 		}
 		
@@ -157,7 +169,7 @@
 		}
 
 		.btn-buynow-container {
-			padding: 18px 14px 12px;
+			padding: 18px 10px 12px 10px;
 			background-color: @white;
 			border: 1px solid @purple;
 
@@ -172,6 +184,7 @@
 			font-family: @ht;
 			color: @pink;
 			white-space: nowrap;
+			vertical-align: top;
 
 			&:after {
 				display: block;
@@ -195,6 +208,7 @@
 			@media only screen and (max-width: @breakpoint) {
 				display: inline-block;
 				margin-bottom: 12px;
+				margin-left: 12px;
 
 				&:after {
 					content: "|";

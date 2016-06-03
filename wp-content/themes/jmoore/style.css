@@ -383,7 +383,7 @@ body {
   background: #FFFFFF;
   color: #6c6461;
   background-image: url(img/bg-main.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-position: center 123px;
 }
 body.no-overflow {
@@ -674,6 +674,7 @@ section {
 .generic-post .container article .generic-post-content img.alignleft {
   float: left;
   margin-right: 15px;
+  margin-bottom: 15px;
 }
 .generic-post .container article .generic-post-content img.aligncenter {
   margin: 0 auto 15px;
@@ -681,6 +682,7 @@ section {
 .generic-post .container article .generic-post-content img.alignright {
   float: right;
   margin-left: 15px;
+  margin-bottom: 15px;
 }
 /**************************************************************************************************
  *
@@ -808,6 +810,11 @@ i {
   display: inline-block;
   margin-left: 8px;
   vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  i {
+    margin-left: 5px;
+  }
 }
 i.icon-dbl-arrow-pink {
   background-image: url(img/arrow-dbl-pink.png);
@@ -1638,12 +1645,14 @@ section .container {
 .novel-summary,
 .short-story-summary {
   width: 90%;
+  min-width: 700px;
   margin: 0 auto 60px;
 }
 @media only screen and (max-width: 767px) {
   .novel-summary,
   .short-story-summary {
     width: 100%;
+    min-width: 0;
     margin-bottom: 50px;
   }
 }
@@ -1681,10 +1690,17 @@ section .container {
 }
 .novel-summary .column-two,
 .short-story-summary .column-two {
-  width: 57%;
+  width: 56%;
   float: left;
   padding-right: calc(1% - 1px);
+  margin-right: 1%;
   border-right: 1px solid #E2B6D9;
+}
+@media only screen and (max-width: 1115px) {
+  .novel-summary .column-two,
+  .short-story-summary .column-two {
+    width: 54%;
+  }
 }
 @media only screen and (max-width: 767px) {
   .novel-summary .column-two,
@@ -1721,10 +1737,17 @@ section .container {
   width: 22%;
   float: right;
 }
+@media only screen and (max-width: 1115px) {
+  .novel-summary .column-three,
+  .short-story-summary .column-three {
+    width: 25%;
+  }
+}
 @media only screen and (max-width: 767px) {
   .novel-summary .column-three,
   .short-story-summary .column-three {
     width: 100%;
+    min-width: 0;
     float: none;
   }
 }
@@ -1737,7 +1760,7 @@ section .container {
 }
 .novel-summary .column-three .btn-buynow-container,
 .short-story-summary .column-three .btn-buynow-container {
-  padding: 18px 14px 12px;
+  padding: 18px 10px 12px 10px;
   background-color: #FFFFFF;
   border: 1px solid #E2B6D9;
 }
@@ -1754,6 +1777,7 @@ section .container {
   font-family: 'harriet_textregular', 'Times New Roman', Times, Serif;
   color: #FD597F;
   white-space: nowrap;
+  vertical-align: top;
 }
 .novel-summary .column-three a:after,
 .short-story-summary .column-three a:after {
@@ -1778,6 +1802,7 @@ section .container {
   .short-story-summary .column-three a {
     display: inline-block;
     margin-bottom: 12px;
+    margin-left: 12px;
   }
   .novel-summary .column-three a:after,
   .short-story-summary .column-three a:after {

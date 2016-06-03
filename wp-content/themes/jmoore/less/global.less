@@ -18,7 +18,7 @@ body {
 	background: @white;
 	color: @dark-gray;
 	background-image: url(img/bg-main.jpg);
-	background-repeat: no-repeat;
+	background-repeat: repeat-x;
 	background-position: center 123px;
 	// background-size: 100% auto;
 
@@ -358,6 +358,7 @@ section {
 					&.alignleft {
 						float: left;
 						margin-right: 15px;
+						margin-bottom: 15px;
 					}
 
 					&.aligncenter {
@@ -367,6 +368,7 @@ section {
 					&.alignright {
 						float: right;
 						margin-left: 15px;
+						margin-bottom: 15px;
 					}
 				}
 			}
@@ -496,6 +498,10 @@ i {
 	display: inline-block;
 	margin-left: 8px;
 	vertical-align: middle;
+
+	@media only screen and (max-width: @breakpoint) {
+		margin-left: 5px;
+	}
 
 	&.icon-dbl-arrow-pink {
 		background-image: url(img/arrow-dbl-pink.png);
