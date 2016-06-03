@@ -674,15 +674,22 @@ section {
 .generic-post .container article .generic-post-content img.alignleft {
   float: left;
   margin-right: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #E2B6D9;
+  padding: 10px;
 }
 .generic-post .container article .generic-post-content img.aligncenter {
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
 }
 .generic-post .container article .generic-post-content img.alignright {
   float: right;
   margin-left: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #E2B6D9;
+  padding: 10px;
+}
+.generic-post .container article .generic-post-content img.alignleft + .alignright {
+  margin-left: 0;
 }
 /**************************************************************************************************
  *
