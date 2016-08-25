@@ -68,7 +68,7 @@ get_header();?>
 
 			<div class="img-container"></div>
 			<div class="content-container">
-				<h2>News: <?php the_title(); ?></h2>
+				<h2><?php the_title(); ?></h2>
 				<hr class="purple-hr">
 				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.content-container -->
@@ -77,7 +77,7 @@ get_header();?>
 
 			<div class="img-container"></div>
 			<div class="content-container">
-				<h2>Blog: <?php the_title(); ?></h2>
+				<h2><?php the_title(); ?></h2>
 				<hr class="purple-hr">
 				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.content-container -->
@@ -86,7 +86,7 @@ get_header();?>
 
 			<div class="img-container"></div>
 			<div class="content-container">
-				<h2>Ahoy: <?php the_title(); ?></h2>
+				<h2><?php the_title(); ?></h2>
 				<hr class="purple-hr">
 				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.content-container -->
@@ -98,7 +98,7 @@ get_header();?>
 			</div> <!-- /.img-container -->
 
 			<div class="content-container">
-				<h2>Books: <?php the_title(); ?></h2>
+				<h2><?php the_title(); ?></h2>
 				<hr class="purple-hr">
 				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">Learn More<i class="icon icon-dbl-arrow-pink"></i></a>
 			</div> <!-- /.content-container -->

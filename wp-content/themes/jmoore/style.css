@@ -2054,6 +2054,9 @@ section .container {
 .ahoy-landing .container .articles-container ul li article .summary {
   margin-bottom: 20px;
 }
+.ahoy-landing .container .articles-container ul li article .summary p {
+  word-wrap: break-word;
+}
 .ahoy-landing .container .articles-container ul li article .summary .author {
   font-size: 1.2rem;
   font-style: italic;
