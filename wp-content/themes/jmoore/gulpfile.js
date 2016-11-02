@@ -1,7 +1,7 @@
 /**
  * Gulp settings.
  *
- * @package campbellsoup
+ * @package jmoore
  */
 
 "use strict";
